@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamUp.Views.pageInscription">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" Padding="30,0,30,0">
+            <Label Text="Créer un compte" FontSize="Title" Padding="30,10,30,10" HorizontalTextAlignment="Center" TextColor="Black"/>
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Label Text="Nom" TextColor="Black"/>
+                <Label Grid.Column="1"
+           Text="Prenom" TextColor="Black" />
+                <Entry IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go" Grid.Row="1"/>
+                <Entry IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+
+
+            <Label Text="Date de naissance" TextColor="Black"/>
+
+            <DatePicker x:Name="startDatePicker"
+                        Format="dd/MM/yyyy"
+                        DateSelected="OnDateSelected" />
+
+            <Label Text="Identifiant" TextColor="Black"/>
+
+            <StackLayout>
+                <Entry IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
+            </StackLayout>
+
+            <Label Text="E-mail" TextColor="Black"/>
+
+            <StackLayout>
+                <Entry IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
+            </StackLayout>
+
+            <Label Text="Mot de Passe" TextColor="Black"/>
+
+            <StackLayout>
+                <Entry IsPassword="True" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Horizontal">
+                <CheckBox Color="Black"/>
+                <Label Text="Je souhaite recevoir des notifications" VerticalTextAlignment="Center" TextColor="Black"/>
+
+            </StackLayout>
+
+            <Button Text="Créer le compte" TextColor="Black" WidthRequest="175" HorizontalOptions="End" BorderColor="Black" BorderWidth="3" BackgroundColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

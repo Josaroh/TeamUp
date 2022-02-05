@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamUp.Views.pageAccueil">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Yo c'est la page d'accueil fréro"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Profil" 
+                    TextColor="Black" 
+                    WidthRequest="175" 
+                    HorizontalOptions="End" 
+                    BorderColor="Black" 
+                    BorderWidth="3" 
+                    BackgroundColor="White"
+                    Clicked="OnClickProfil"/>
+
+            <Button Text="Gratuite" 
+                    TextColor="Black" 
+                    WidthRequest="175" 
+                    HorizontalOptions="End" 
+                    BorderColor="Black" 
+                    BorderWidth="3" 
+                    BackgroundColor="White"
+                    Clicked="OnClickActGratuite"/>
+
+            <Button Text="Payante" 
+                    TextColor="Black" 
+                    WidthRequest="175" 
+                    HorizontalOptions="End" 
+                    BorderColor="Black" 
+                    BorderWidth="3" 
+                    BackgroundColor="White"
+                    Clicked="OnClickActPayante"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
