@@ -61,7 +61,8 @@ namespace TeamUp.Views
 
                     Visiteur visiteur = visiteurs[0];
 
-                    Console.WriteLine(visiteur.Identifiant);
+                    App.visiteur=visiteur;
+
 
                     await Navigation.PushAsync(new pageAccueil()); // renvoie sur la page d'accueil
 

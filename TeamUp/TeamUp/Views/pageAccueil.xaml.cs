@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TeamUp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,9 +12,14 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageAccueil : ContentPage
     {
+       
+
+ 
         public pageAccueil()
         {
             InitializeComponent();
+
+            identifiant.Text = App.visiteur.Identifiant;
         }
 
         private async void OnClickProfil(object sender, EventArgs e)

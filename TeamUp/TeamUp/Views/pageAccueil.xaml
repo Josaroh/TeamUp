@@ -8,6 +8,13 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
+
+            <Label x:Name="identifiant"
+                   TextColor="Black"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+
             <Button Text="Profil" 
                     TextColor="Black" 
                     WidthRequest="175" 

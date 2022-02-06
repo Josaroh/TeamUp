@@ -6,6 +6,7 @@ using TeamUp.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using TeamUp.Repositories;
+using TeamUp.Models;
 
 namespace TeamUp
 {
@@ -14,6 +15,10 @@ namespace TeamUp
         private string dbPath = Path.Combine(FileSystem.AppDataDirectory,"database.db3");
 
         public static VisiteurRepository VisiteurRepository { get; set; }
+
+        public static Visiteur visiteur { get; set; }
+
+
 
         public App()
         {

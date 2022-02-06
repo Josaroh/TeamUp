@@ -43,6 +43,8 @@ namespace TeamUp.Views
                 await App.VisiteurRepository.AddNewUserAsync(identifiant.Text, nom.Text, prenom.Text, dateNaissance.ToString(), email.Text, motDePasse.Text);
 
                 statusMessage.Text = App.VisiteurRepository.StatusMessage;
+
+                await Navigation.PopAsync();
             }
 
 
