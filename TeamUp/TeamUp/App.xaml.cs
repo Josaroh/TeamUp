@@ -3,6 +3,8 @@ using TeamUp.Services;
 using TeamUp.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.IO;
+using Xamarin.Essentials;
 
 namespace TeamUp
 {
