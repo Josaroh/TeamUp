@@ -19,33 +19,33 @@
                 <Label Text="Nom" TextColor="Black"/>
                 <Label Grid.Column="1"
            Text="Prenom" TextColor="Black" />
-                <Entry IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go" Grid.Row="1"/>
-                <Entry IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go" Grid.Row="1" Grid.Column="1"/>
+                <Entry x:Name="nom" IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go" Grid.Row="1"/>
+                <Entry x:Name="prenom" IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go" Grid.Row="1" Grid.Column="1"/>
             </Grid>
 
 
             <Label Text="Date de naissance" TextColor="Black"/>
 
-            <DatePicker x:Name="startDatePicker"
+            <DatePicker x:Name="dateNaissance"
                         Format="dd/MM/yyyy"
                         DateSelected="OnDateSelected" />
 
             <Label Text="Identifiant" TextColor="Black"/>
 
             <StackLayout>
-                <Entry IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
+                <Entry x:Name="identifiant" IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
             </StackLayout>
 
             <Label Text="E-mail" TextColor="Black"/>
 
             <StackLayout>
-                <Entry IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
+                <Entry x:Name="email" IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
             </StackLayout>
 
             <Label Text="Mot de Passe" TextColor="Black"/>
 
             <StackLayout>
-                <Entry IsPassword="True" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
+                <Entry x:Name="motDePasse" IsPassword="True" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
             </StackLayout>
 
 
@@ -55,7 +55,9 @@
 
             </StackLayout>
 
-            <Button Text="Créer le compte" TextColor="Black" WidthRequest="175" HorizontalOptions="End" BorderColor="Black" BorderWidth="3" BackgroundColor="White"/>
+            <Button Clicked ="créerCompte" Text="Créer le compte" TextColor="Black" WidthRequest="175" HorizontalOptions="End" BorderColor="Black" BorderWidth="3" BackgroundColor="White"/>
+
+            <Label x:Name="statusMessage" TextColor="Red"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

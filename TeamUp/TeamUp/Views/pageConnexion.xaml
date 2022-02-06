@@ -14,7 +14,7 @@
             <Label Text="Identifiant ou adresse e-mail" FontSize="16" Padding="30,0,10,0" TextColor="White"/>
 
             <StackLayout Padding="26,0,20,0">
-                <Entry IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
+                <Entry x:Name="identifiant" IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
             </StackLayout>
 
 
@@ -24,7 +24,7 @@
             </StackLayout>
 
             <StackLayout Padding="26,0,20,0">
-                <Entry IsPassword="True" ClearButtonVisibility="WhileEditing" ReturnType="Go" Completed="Entry_Completed"/>
+                <Entry x:Name="motDePasse" IsPassword="True" ClearButtonVisibility="WhileEditing" ReturnType="Go" />
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" Padding="22,0,22,0">
@@ -47,7 +47,7 @@
                 <Button Clicked="OnClickSeConnecter" Text="Se connecter" TextColor="Black" WidthRequest="126" HorizontalOptions="End" BorderColor="Black" BorderWidth="3" BackgroundColor="White"/>
             </StackLayout>
 
-            <Label x:Name="motDePasse"></Label>
+            <Label x:Name="statusMessages" TextColor="Red"/>
 
         </StackLayout>
     </ContentPage.Content>

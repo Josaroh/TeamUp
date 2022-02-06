@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TeamUp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -39,15 +39,50 @@ namespace TeamUp.Views
         {
             //mettre condition mot de passe et identifiant
 
-            await Navigation.PushAsync(new pageAccueil()); // renvoie sur la page d'accueil
+
+            statusMessages.Text = "";
+
+            if (string.IsNullOrEmpty(identifiant.Text) || string.IsNullOrWhiteSpace(identifiant.Text) ||
+                 string.IsNullOrEmpty(motDePasse.Text) || string.IsNullOrWhiteSpace(motDePasse.Text))
+            {
+                statusMessages.Text = "Veuillez renseigner tous les champs";
+            }
+            else
+            {
+                List<Visiteur> visiteurs = await App.VisiteurRepository.GetVisiteurAsync(identifiant.Text, motDePasse.Text);
+
+                bool isEmpty = !visiteurs.Any();
+                if (isEmpty)
+                {
+                    statusMessages.Text = "Ce visiteur n'existe pas";
+                }
+                else
+                {
+
+                    Visiteur visiteur = visiteurs[0];
+
+                    Console.WriteLine(visiteur.Identifiant);
+
+                    await Navigation.PushAsync(new pageAccueil()); // renvoie sur la page d'accueil
+
+                    statusMessages.Text = App.VisiteurRepository.StatusMessage;
+                }
+
+
+
+
+                
+            }
+
+
+            
+
+
+
+            
         }
 
         //événement quand l'utilisateur a entré son mot de passe
-        private void Entry_Completed(object sender, EventArgs e)
-        {
-            var editor = (Entry)sender; //initialise l'objet editor pour avoir accès aux attributs 
-
-            motDePasse.Text = "Le mot de passe est : " + editor.Text; // affiche le text
-        }
+      
     }
 }
