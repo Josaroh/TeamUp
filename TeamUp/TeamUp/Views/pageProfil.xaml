@@ -1,12 +1,158 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage Title="Profil"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TeamUp.Views.pageProfil">
-    <ContentPage.Content>
+
+    <NavigationPage.TitleView>
         <StackLayout>
-            <Label Text="Yo t'es sur la page de ton profil fréro"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Profil" 
+                   TextColor="White" 
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary"
+                     Priority="0" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" Padding="30,0,30,0">
+            <StackLayout Padding="30,10,30,10">
+                <Image Source="NonoPasSportive.jpg"
+                       WidthRequest="150"/>
+            </StackLayout>
+            
+            <Label Text="NonoLaNonSportive" 
+                   FontAttributes="Bold" 
+                   FontSize="Title" 
+                   Padding="30,10,30,10" 
+                   HorizontalTextAlignment="Center" 
+                   TextColor="Black"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Label Text="Nom" 
+                       FontSize="Medium" 
+                       TextColor="Black"/>
+                <Entry Grid.Column="1"
+                       IsPassword="False" 
+                       ClearButtonVisibility="WhileEditing" 
+                       ReturnType="Go"/>
+                <Label Grid.Row="1"
+                       Text="Prenom" 
+                       FontSize="Medium"
+                       TextColor="Black" />
+                <Entry Grid.Row="1" 
+                       Grid.Column="1"
+                       IsPassword="False" 
+                       ClearButtonVisibility="WhileEditing" 
+                       ReturnType="Go"/>
+                <Label Grid.Row="2"
+                       Text="Date de naissance"
+                       FontSize="Medium"
+                       TextColor="Black"/>
+                <DatePicker Grid.Row="2" 
+                            Grid.Column="1"
+                            x:Name="startDatePicker"
+                            Format="dd/MM/yyyy"
+                            DateSelected="OnDateSelected"/>
+                <Label Grid.Row="3"
+                       Text="Identifiant"
+                       FontSize="Medium"
+                       TextColor="Black" />
+                <Entry Grid.Row="3" 
+                       Grid.Column="1"
+                       IsPassword="False" 
+                       ClearButtonVisibility="WhileEditing" 
+                       ReturnType="Go"/>
+                <Label Grid.Row="4"
+                       Text="E-mail"
+                       FontSize="Medium"
+                       TextColor="Black" />
+                <Entry Grid.Row="4" 
+                       Grid.Column="1"
+                       IsPassword="False" 
+                       ClearButtonVisibility="WhileEditing" 
+                       ReturnType="Go"/>
+                <Label Grid.Row="5"
+                       Text="Localisation" 
+                       FontSize="Medium"
+                       TextColor="Black" />
+                <Entry Grid.Row="5" 
+                       Grid.Column="1"
+                       IsPassword="False" 
+                       ClearButtonVisibility="WhileEditing" 
+                       ReturnType="Go"/>
+                <Label Grid.Row="6"
+                       Text="Périmètre"
+                       FontSize="Medium"
+                       TextColor="Black" />
+                <Slider Grid.Row="6"
+                        Grid.Column="1"
+                    Maximum="360"
+                 />
+                <Label Grid.Row="7"
+                       Text="Préférences" 
+                       FontSize="Medium"
+                       TextColor="Black" />
+                <Picker Grid.Row="7"
+                        Grid.Column="1"
+                        x:Name="picker"
+                        Title="Choix d'un sport"
+                        FontSize="Medium"
+                        TitleColor="LightGray">
+                        
+                </Picker>
+            </Grid>
+            
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 10">
+                    <Label Text="Changer le mot de passe"
+                       x:Name="lblclick"
+                       VerticalTextAlignment="Center"
+                       TextColor="#1950a3"
+                       TextDecorations="Underline"/>
+
+                </StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="0.5*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Button Text="Enregistrer" 
+                    TextColor="Black" 
+                    WidthRequest="150" 
+                    HorizontalOptions="Start" 
+                    BorderColor="Black" 
+                    BorderWidth="3" 
+                    BackgroundColor="White"/>
+
+                    <Button Clicked="OnClickDeconnexion" 
+                            Text="Se déconnecter" 
+                            TextColor="Black" 
+                            WidthRequest="150" 
+                            HorizontalOptions="End" 
+                            BorderColor="Black" 
+                            BorderWidth="3" 
+                            BackgroundColor="White"
+                            Grid.Column="1"/>
+                </Grid>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

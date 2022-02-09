@@ -1,27 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="TeamUp.Views.pageAccueil">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="profil.png"
+                     Order="Primary"
+                     Priority="0" 
+                     Clicked="OnClickProfil"/>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
+        
         <StackLayout>
-            <Label Text="Yo c'est la page d'accueil fréro"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-
-            <Button Text="Profil" 
-                    TextColor="Black" 
-                    WidthRequest="175" 
-                    HorizontalOptions="End" 
-                    BorderColor="Black" 
-                    BorderWidth="3" 
-                    BackgroundColor="White"
-                    Clicked="OnClickProfil"/>
-
+            <maps:Map>
+                <x:Arguments>
+                    <maps:MapSpan>
+                        <x:Arguments>
+                            <maps:Position>
+                                <x:Arguments>
+                                    <x:Double>43.4775800</x:Double>
+                                    <x:Double>-1.5086674</x:Double>
+                                </x:Arguments>
+                            </maps:Position>
+                            <x:Double>0.01</x:Double>
+                            <x:Double>0.01</x:Double>
+                        </x:Arguments>
+                    </maps:MapSpan>
+                </x:Arguments>
+            </maps:Map>
+            <StackLayout Orientation="Horizontal">
             <Button Text="Gratuite" 
                     TextColor="Black" 
                     WidthRequest="175" 
                     HorizontalOptions="End" 
-                    BorderColor="Black" 
+                    BorderColor="Black"  
                     BorderWidth="3" 
                     BackgroundColor="White"
                     Clicked="OnClickActGratuite"/>
@@ -34,6 +48,24 @@
                     BorderWidth="3" 
                     BackgroundColor="White"
                     Clicked="OnClickActPayante"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="#24b6ff"
+                         Spacing="30">
+                <ImageButton Source="convo_petite.png"
+                             BackgroundColor="#24b6ff"
+                             HeightRequest="40"
+                             HorizontalOptions="CenterAndExpand"/>
+                <ImageButton Source="plus.png"
+                             BackgroundColor="#24b6ff"
+                             HeightRequest="40"
+                             Margin="0,10,0,10"
+                             HorizontalOptions="CenterAndExpand"/>
+                <ImageButton Source="histo.png"
+                             BackgroundColor="#24b6ff"
+                             HeightRequest="40"
+                             HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

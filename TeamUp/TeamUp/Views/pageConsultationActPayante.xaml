@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamUp.Views.pageConsultationActPayante">
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Activité" 
+                   TextColor="White" 
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Secondary"
+                     Priority="0" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="10,10,10,10">
+                <Label Text="Séance de jogging" FontSize="Title"/>
+            </StackLayout>
+
+            <StackLayout Padding="0,10,10,10">
+                <!-- Partie Date -->
+                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
+                    <Image Source="icon_calendrier.jpg" WidthRequest="50"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Date" TextColor="Black"/>
+                        <Label Text="13/04/2021" TextColor="Black"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Partie Heure de rdv -->
+                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
+                    <Image Source="icon_timer.jpg" WidthRequest="50"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Heure de rendez-vous" TextColor="Black"/>
+                        <Label Text="19h00" TextColor="Black"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Partie Durée -->
+                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
+                    <Image Source="icon_sablier.jpg" WidthRequest="50"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Durée" TextColor="Black"/>
+                        <Label Text="2 heures" TextColor="Black"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Partie Lieu de rdv -->
+                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
+                    <Image Source="icon_ping.jpg" WidthRequest="50"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Lieu de rendez-vous" TextColor="Black"/>
+                        <Label Text="Plage des Sables d'Or ANGLET" TextColor="Black"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Partie Tarif -->
+                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
+                    <Image Source="icon_euro.jpg" WidthRequest="50"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Tarif" TextColor="Black"/>
+                        <Label Text="10€" TextColor="Black"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <!-- Partie Niveau -->
+                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
+                    <Image Source="icon_croissance.jpg" WidthRequest="50"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Niveau" TextColor="Black"/>
+                        <Label Text="Avancé" TextColor="Black"/>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+
+            <Label Padding="15,0,0,0" Text="Teammates inscrits (3/4)" TextColor="Black"/>
+
+            <TableView Intent="Data">
+                <TableRoot>
+                    <TableSection>
+                        <TextCell Text="LuluChacha" TextColor="Black"/>
+                        <TextCell Text="HugoLeBeau" TextColor="Black"/>
+                        <TextCell Text="TommyPrincesse" TextColor="Black"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+
+            <StackLayout Padding="10,10,10,10">
+                <Button Text="S'inscrire"
+                        HorizontalOptions="End"
+                        TextColor="Black" 
+                        BorderColor="Black" 
+                        BorderWidth="2" 
+                        BackgroundColor="White"
+                        WidthRequest="125"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

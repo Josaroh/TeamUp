@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -28,14 +24,14 @@ namespace TeamUp.Views
         {
             //mettre condition mot de passe et identifiant
 
-            await Navigation.PushAsync(new pageConsultActGratuite()); // renvoie sur la page d'accueil
+            await Navigation.PushAsync(new pageConsultationActGratuite()); // renvoie sur la page d'accueil
         }
 
         private async void OnClickActPayante(object sender, EventArgs e)
         {
             //mettre condition mot de passe et identifiant
 
-            await Navigation.PushAsync(new pageConsultActPayante()); // renvoie sur la page d'accueil
+            await Navigation.PushAsync(new pageConsultationActPayante()); // renvoie sur la page d'accueil
         }
     }
 }

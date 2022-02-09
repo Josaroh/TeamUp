@@ -1,54 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:TeamUp.Views"
              x:Class="TeamUp.Views.pageConnexion"
              BackgroundColor="#24b6ff">
+    
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="30,100,30,10">
-                <Image Source="logo_CLEAN_simple_teamup_FINAL.jpg" WidthRequest="100"/>
+            <StackLayout Padding="30,10,30,10">
+                <Image Source="logo_couleur_teamup_FINAL.jpg" 
+                       WidthRequest="200"/>
             </StackLayout>
 
-
-            <Label Text="Connexion" FontSize="Title" Padding="30,10,30,10" HorizontalTextAlignment="Center" TextColor="White"/>
-            <Label Text="Identifiant ou adresse e-mail" FontSize="16" Padding="30,0,10,0" TextColor="White"/>
-
+            <Label Text="Connexion" 
+                   FontSize="30" 
+                   Padding="30,10,30,10" 
+                   HorizontalTextAlignment="Center" 
+                   FontAttributes="Bold" 
+                   TextColor="White"/>
+            <Label Text="Identifiant ou adresse e-mail" 
+                   FontSize="16" 
+                   Padding="30,0,10,0" 
+                   FontAttributes="Bold" 
+                   TextColor="White"/>
+            
+            <!-- Saisie de l'identifiant ou de l'adresse mail -->
             <StackLayout Padding="26,0,20,0">
-                <Entry IsPassword="False" ClearButtonVisibility="WhileEditing" ReturnType="Go"/>
+                <Entry IsPassword="False" 
+                       ClearButtonVisibility="WhileEditing" 
+                       ReturnType="Go"/>
             </StackLayout>
 
 
-            <StackLayout Orientation="Horizontal"  Padding="30,0,22,0">
-                <Label Text="Mot de passe" TextColor="White"/>
-                <Label Text="Mot de passe oublié ?" TextDecorations="Underline" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" TextColor="#1950a3"/>
+            <StackLayout Orientation="Horizontal" 
+                         Padding="30,0,22,0">
+                <Label Text="Mot de passe" 
+                       FontSize="16" 
+                       FontAttributes="Bold" 
+                       TextColor="White"/>
+                <Label Text="Mot de passe oublié ?" 
+                       TextDecorations="Underline" 
+                       VerticalTextAlignment="Center" 
+                       HorizontalOptions="EndAndExpand" 
+                       TextColor="#1950a3"/>
             </StackLayout>
 
+            <!-- Saisie du mot de passe -->
             <StackLayout Padding="26,0,20,0">
-                <Entry IsPassword="True" ClearButtonVisibility="WhileEditing" ReturnType="Go" Completed="Entry_Completed"/>
+                <local:voirMotDePasse WidthRequest="100" 
+                                      HeightRequest="50" />
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal" Padding="22,0,22,0">
+            <StackLayout Orientation="Horizontal" 
+                         Padding="22,0,22,0">
                 <CheckBox Color="White"/>
-                <Label Text="Rester connecté" VerticalTextAlignment="Center" TextColor="White"/>
+                <Label Text="Rester connecté" 
+                       FontSize="16" 
+                       VerticalTextAlignment="Center" 
+                       FontAttributes="Bold" 
+                       TextColor="White"/>
 
                 <Label Text="Créer un compte"
-                   x:Name="lblclick"
-                   VerticalTextAlignment="Center"
-                   HorizontalOptions="EndAndExpand" 
-                   TextColor="#1950a3"
-                   TextDecorations="Underline">
-                </Label>
-
-
-
+                       x:Name="lblclick"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="EndAndExpand" 
+                       TextColor="#1950a3"
+                       TextDecorations="Underline"/>
             </StackLayout>
 
             <StackLayout Padding="0,30,18,0">
-                <Button Clicked="OnClickSeConnecter" Text="Se connecter" TextColor="Black" WidthRequest="126" HorizontalOptions="End" BorderColor="Black" BorderWidth="3" BackgroundColor="White"/>
+                <Button Clicked="OnClickSeConnecter" 
+                        Text="Se connecter"
+                        TextColor="Black" 
+                        WidthRequest="126" 
+                        HorizontalOptions="End" 
+                        BorderWidth="3" 
+                        BackgroundColor="White"/>
             </StackLayout>
 
-            <Label x:Name="motDePasse"></Label>
-
+            <Label x:Name="motDePasse"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

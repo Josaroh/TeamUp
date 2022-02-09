@@ -15,6 +15,27 @@ namespace TeamUp.Views
         public pageProfil()
         {
             InitializeComponent();
+
+            var ListeSports = new List<string>();
+            ListeSports.Add("Boxe");
+            ListeSports.Add("Surf");
+            ListeSports.Add("Pala");
+            ListeSports.Add("Course à pied");
+            ListeSports.Add("Yoga");
+            ListeSports.Add("Rugby");
+            ListeSports.Add("Tennis");
+
+            picker.ItemsSource = ListeSports;
+        }
+        public void OnDateSelected(object sender, EventArgs e)
+        {
+
+        }
+        private async void OnClickDeconnexion(object sender, EventArgs e)
+        {
+            //mettre condition mot de passe et identifiant
+
+            await Navigation.PushAsync(new pageConnexion()); // renvoie sur la page d'accueil
         }
     }
 }
