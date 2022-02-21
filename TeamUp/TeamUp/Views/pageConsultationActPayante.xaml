@@ -18,68 +18,73 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="10,10,10,10">
-                <Label Text="Séance de jogging" FontSize="Title"/>
+            <StackLayout Orientation="Horizontal" Padding="10,20,10,10">
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                    <Label Text="13 Avr" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                    <Label Text="-" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Séance de jogging" TextColor="Black" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+                </StackLayout>
             </StackLayout>
 
-            <StackLayout Padding="0,10,10,10">
-                <!-- Partie Date -->
-                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-                    <Image Source="icon_calendrier.jpg" WidthRequest="50"/>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Date" TextColor="Black"/>
-                        <Label Text="13/04/2021" TextColor="Black"/>
+            <StackLayout Orientation="Horizontal" Padding="45,10,10,20">
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal" Padding="0,40,0,30">
+                        <Image Source="icon_ping.jpg" WidthRequest="40"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,7,0,30">
+                        <Image Source="icon_timer.jpg" WidthRequest="35"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,5,0,30">
+                        <Image Source="icon_moula.jpg" WidthRequest="40"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,5,0,30">
+                        <Image Source="icon_croissance.jpg" WidthRequest="45"/>
                     </StackLayout>
                 </StackLayout>
-
-                <!-- Partie Heure de rdv -->
-                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-                    <Image Source="icon_timer.jpg" WidthRequest="50"/>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Heure de rendez-vous" TextColor="Black"/>
-                        <Label Text="19h00" TextColor="Black"/>
+                    
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal" Padding="0,25,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,-50,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
                     </StackLayout>
                 </StackLayout>
-
-                <!-- Partie Durée -->
-                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-                    <Image Source="icon_sablier.jpg" WidthRequest="50"/>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Durée" TextColor="Black"/>
-                        <Label Text="2 heures" TextColor="Black"/>
+                
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Vertical" Padding="-25,37,0,30">
+                        <Label Text="Lieu de rendez-vous" TextColor="Black"  FontFamily="rubik"/>
+                        <Label Text="Plage des Sables d'Or ANGLET" TextColor="Black"  FontFamily="rubikI"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
+                        <Label Text="Horaires" TextColor="Black"  FontFamily="rubik"/>
+                        <Label Text="19h00 - 21h00" TextColor="Black"  FontFamily="rubikI"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
+                        <Label Text="Tarif" TextColor="Black"  FontFamily="rubik"/>
+                        <Label Text="10€" TextColor="Black"  FontFamily="rubikI"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
+                        <Label Text="Niveau" TextColor="Black"  FontFamily="rubik"/>
+                        <Label Text="Avancé" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                 </StackLayout>
-
-                <!-- Partie Lieu de rdv -->
-                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-                    <Image Source="icon_ping.jpg" WidthRequest="50"/>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Lieu de rendez-vous" TextColor="Black"/>
-                        <Label Text="Plage des Sables d'Or ANGLET" TextColor="Black"/>
-                    </StackLayout>
-                </StackLayout>
-
-                <!-- Partie Tarif -->
-                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-                    <Image Source="icon_euro.jpg" WidthRequest="50"/>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Tarif" TextColor="Black"/>
-                        <Label Text="10€" TextColor="Black"/>
-                    </StackLayout>
-                </StackLayout>
-
-                <!-- Partie Niveau -->
-                <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
-                    <Image Source="icon_croissance.jpg" WidthRequest="50"/>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="Niveau" TextColor="Black"/>
-                        <Label Text="Avancé" TextColor="Black"/>
-                    </StackLayout>
-                </StackLayout>
-
             </StackLayout>
 
-            <Label Padding="15,0,0,0" Text="Teammates inscrits (3/4)" TextColor="Black"/>
+            <Label Padding="15,0,0,0" Text="Teammates inscrits (3/4)" TextColor="Black"  FontFamily="rubik"/>
 
             <TableView Intent="Data">
                 <TableRoot>

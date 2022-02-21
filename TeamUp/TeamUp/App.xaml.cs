@@ -4,6 +4,10 @@ using TeamUp.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("Rubik-Regular.ttf", Alias = "rubik")]
+[assembly: ExportFont("Rubik-Bold.ttf", Alias = "rubikB")]
+[assembly: ExportFont("Rubik-Italic.ttf", Alias = "rubikI")]
+
 namespace TeamUp
 {
     public partial class App : Application

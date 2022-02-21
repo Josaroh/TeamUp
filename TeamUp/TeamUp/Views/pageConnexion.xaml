@@ -12,15 +12,15 @@
             </StackLayout>
 
             <Label Text="Connexion" 
+                   FontFamily="rubikB"
                    FontSize="30" 
                    Padding="30,10,30,10" 
-                   HorizontalTextAlignment="Center" 
-                   FontAttributes="Bold" 
+                   HorizontalTextAlignment="Center"
                    TextColor="White"/>
             <Label Text="Identifiant ou adresse e-mail" 
                    FontSize="16" 
                    Padding="30,0,10,0" 
-                   FontAttributes="Bold" 
+                   FontFamily="rubikB"
                    TextColor="White"/>
             
             <!-- Saisie de l'identifiant ou de l'adresse mail -->
@@ -35,9 +35,10 @@
                          Padding="30,0,22,0">
                 <Label Text="Mot de passe" 
                        FontSize="16" 
-                       FontAttributes="Bold" 
+                       FontFamily="rubikB"
                        TextColor="White"/>
                 <Label Text="Mot de passe oublié ?" 
+                       FontFamily="rubik"
                        TextDecorations="Underline" 
                        VerticalTextAlignment="Center" 
                        HorizontalOptions="EndAndExpand" 
@@ -56,11 +57,12 @@
                 <Label Text="Rester connecté" 
                        FontSize="16" 
                        VerticalTextAlignment="Center" 
-                       FontAttributes="Bold" 
+                       FontFamily="rubikB"
                        TextColor="White"/>
 
                 <Label Text="Créer un compte"
                        x:Name="lblclick"
+                       FontFamily="rubik"
                        VerticalTextAlignment="Center"
                        HorizontalOptions="EndAndExpand" 
                        TextColor="#1950a3"
@@ -70,8 +72,9 @@
             <StackLayout Padding="0,30,18,0">
                 <Button Clicked="OnClickSeConnecter" 
                         Text="Se connecter"
-                        TextColor="Black" 
-                        WidthRequest="126" 
+                        FontFamily="rubikB"
+                        TextColor="#1950a3" 
+                        WidthRequest="135" 
                         HorizontalOptions="End" 
                         BorderWidth="3" 
                         BackgroundColor="White"/>

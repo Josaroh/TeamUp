@@ -13,7 +13,7 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="White" Padding="30,0,30,0">
             <Label Text="Créer un compte" 
-                   FontAttributes="Bold" 
+                   FontFamily="rubikB" 
                    FontSize="Title" 
                    Padding="30,10,30,10" 
                    HorizontalTextAlignment="Center" 
@@ -28,9 +28,13 @@
                     <RowDefinition Height="20" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
-                <Label Text="Nom" TextColor="Black"/>
+                <Label Text="Nom" 
+                       TextColor="Black"
+                       FontFamily="rubik" />
                 <Label Grid.Column="1"
-           Text="Prenom" TextColor="Black" />
+                       Text="Prenom" 
+                       TextColor="Black" 
+                       FontFamily="rubik" />
                 <Entry IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
                        ReturnType="Go" 
@@ -44,14 +48,16 @@
 
 
             <Label Text="Date de naissance" 
-                   TextColor="Black"/>
+                   TextColor="Black"
+                   FontFamily="rubik" />
 
             <DatePicker x:Name="startDatePicker"
                         Format="dd/MM/yyyy"
                         DateSelected="OnDateSelected" />
 
             <Label Text="Identifiant" 
-                   TextColor="Black"/>
+                   TextColor="Black"
+                   FontFamily="rubik" />
 
             <StackLayout>
                 <Entry IsPassword="False" 
@@ -60,7 +66,8 @@
             </StackLayout>
 
             <Label Text="E-mail" 
-                   TextColor="Black"/>
+                   TextColor="Black"
+                   FontFamily="rubik" />
 
             <StackLayout>
                 <Entry IsPassword="False" 
@@ -69,7 +76,8 @@
             </StackLayout>
 
             <Label Text="Mot de Passe" 
-                   TextColor="Black"/>
+                   TextColor="Black"
+                   FontFamily="rubik" />
 
             <StackLayout>
                 <local:voirMotDePasse WidthRequest="100" 
@@ -81,12 +89,14 @@
                 <CheckBox Color="Black"/>
                 <Label Text="Je souhaite recevoir des notifications" 
                        VerticalTextAlignment="Center" 
-                       TextColor="Black"/>
+                       TextColor="Black"
+                       FontFamily="rubikB" />
 
             </StackLayout>
 
             <Button Text="Créer le compte" 
                     TextColor="Black" 
+                    FontFamily="rubik" 
                     WidthRequest="175" 
                     HorizontalOptions="End" 
                     BorderColor="Black" 

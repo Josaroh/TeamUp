@@ -33,5 +33,12 @@ namespace TeamUp.Views
 
             await Navigation.PushAsync(new pageConsultationActPayante()); // renvoie sur la page d'accueil
         }
+
+        private async void OnClickCreationAct(object sender, EventArgs e)
+        {
+            //mettre condition mot de passe et identifiant
+
+            await Navigation.PushAsync(new pageCreationAct()); // renvoie sur la page d'accueil
+        }
     }
 }

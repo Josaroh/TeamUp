@@ -60,7 +60,8 @@
                              BackgroundColor="#24b6ff"
                              HeightRequest="40"
                              Margin="0,10,0,10"
-                             HorizontalOptions="CenterAndExpand"/>
+                             HorizontalOptions="CenterAndExpand"
+                             Clicked="OnClickCreationAct"/>
                 <ImageButton Source="histo.png"
                              BackgroundColor="#24b6ff"
                              HeightRequest="40"
