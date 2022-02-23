@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace TeamUp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class pageSupprTeammate : ContentPage
+    public partial class pageChargement : ContentPage
     {
-        public pageSupprTeammate()
+        public pageChargement()
         {
             InitializeComponent();
         }

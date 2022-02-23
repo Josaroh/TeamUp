@@ -14,41 +14,38 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Padding="15,10,0,0" Text="Teammates inscrits (3/4)" TextColor="Black"  FontFamily="rubik"/>
+            <Label Padding="15,30,0,15" Text="Teammates inscrits (3/4)" TextColor="Black"  FontFamily="rubikB"/>
 
             <TableView Intent="Settings">
                 <TableRoot>
                     <TableSection>
-                        <ViewCell IsEnabled="False">
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout Padding="10,10,0,0">
-                                    <Label Text="LuluChacha" TextColor="Black"/>
-                                </StackLayout>
-                                <ImageButton Source="icon_poubelle.png" HorizontalOptions="EndAndExpand" IsEnabled="True" Clicked="OnClickSupprTeammate"/>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
+                                <Label Text="LuluChacha" TextColor="Black"/>
                             </StackLayout>
                         </ViewCell>
-                        <ViewCell IsEnabled="False">
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout Padding="10,10,0,0">
-                                    <Label Text="HugoLeBeau" TextColor="Black"/>
-                                </StackLayout>
-                                <ImageButton Source="icon_poubelle.png" HorizontalOptions="EndAndExpand"/>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
+                                <Label Text="HugoLeBeau" TextColor="Black"/>
                             </StackLayout>
                         </ViewCell>
-                        <ViewCell IsEnabled="False">
-                            <StackLayout Orientation="Horizontal" >
-                                <StackLayout Padding="10,10,0,0">
-                                    <Label Text="TommyPrincesse" TextColor="Black"/>
-                                </StackLayout>
-                                <ImageButton Source="icon_poubelle.png" HorizontalOptions="EndAndExpand"/>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
+                                <Label Text="TommyPrincesse" TextColor="Black"/>
                             </StackLayout>
                         </ViewCell>
                     </TableSection>
                 </TableRoot>
             </TableView>
-            <StackLayout Padding="10,10,10,10">
+            <StackLayout Orientation="Horizontal" Padding="10,10,10,10" HorizontalOptions="CenterAndExpand">
+                <Button Text="Annuler"
+                        FontFamily="rubik"
+                        TextColor="Black" 
+                        BorderColor="Black" 
+                        BorderWidth="2" 
+                        BackgroundColor="White"
+                        WidthRequest="125"/>
                 <Button Text="Enregistrer"
-                        HorizontalOptions="End"
                         FontFamily="rubik"
                         TextColor="Black" 
                         BorderColor="Black" 

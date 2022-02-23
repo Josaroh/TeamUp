@@ -7,11 +7,13 @@
 
   <ItemGroup>
     <Compile Remove="Views\pageSupprActPayante.xaml.cs" />
+    <Compile Remove="Views\pageSupprTeammate.xaml.cs" />
     <Compile Remove="Views\View1.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Remove="Views\pageSupprActPayante.xaml" />
+    <EmbeddedResource Remove="Views\pageSupprTeammate.xaml" />
     <EmbeddedResource Remove="Views\View1.xaml" />
   </ItemGroup>
 
@@ -46,6 +48,12 @@
     <EmbeddedResource Update="Views\pageActPayanteRejointe.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\pageChargement.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\pageConfirmationPaiement.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\pageConsultationActGratuite.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -70,10 +78,10 @@
     <EmbeddedResource Update="Views\pageModifActPayante.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\pageSuiviAct.xaml">
+    <EmbeddedResource Update="Views\pagePaiement.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\pageSupprTeammate.xaml">
+    <EmbeddedResource Update="Views\pageSuiviAct.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\pageSupprTeammates.xaml">
