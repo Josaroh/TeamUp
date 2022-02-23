@@ -13,11 +13,6 @@
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Secondary"
-                     Priority="0" />
-    </ContentPage.ToolbarItems>
-
     <ContentPage.Content>
         <StackLayout BackgroundColor="White" Padding="30,0,30,0">
             <StackLayout Padding="30,10,30,10">
@@ -99,8 +94,7 @@
                        TextColor="Black" />
                 <Slider Grid.Row="6"
                         Grid.Column="1"
-                    Maximum="360"
-                 />
+                        Maximum="30"/>
                 <Label Grid.Row="7"
                        Text="Préférences" 
                        FontSize="Medium"

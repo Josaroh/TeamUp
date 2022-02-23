@@ -4,14 +4,8 @@
              xmlns:local="clr-namespace:TeamUp.Views"
              x:Class="TeamUp.Views.pageInscription">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="logo_couleur_teamup_FINAL.png"
-                     Order="Primary"
-                     Priority="0" />
-    </ContentPage.ToolbarItems>
-    
     <ContentPage.Content>
-        <StackLayout BackgroundColor="White" Padding="30,0,30,0">
+        <StackLayout BackgroundColor="White" Padding="30,30,30,0">
             <Label Text="Créer un compte" 
                    FontFamily="rubikB" 
                    FontSize="Title" 
@@ -19,7 +13,7 @@
                    HorizontalTextAlignment="Center" 
                    TextColor="Black"/>
 
-            <Grid>
+            <Grid Padding="0,30,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.5*" />
                     <ColumnDefinition Width="0.5*" />
@@ -85,7 +79,7 @@
             </StackLayout>
 
 
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Padding="0,0,0, 30">
                 <CheckBox Color="Black"/>
                 <Label Text="Je souhaite recevoir des notifications" 
                        VerticalTextAlignment="Center" 
@@ -101,7 +95,8 @@
                     HorizontalOptions="End" 
                     BorderColor="Black" 
                     BorderWidth="3" 
-                    BackgroundColor="White"/>
+                    BackgroundColor="White"
+                    Clicked="OnClickConnexion"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

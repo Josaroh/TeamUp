@@ -13,7 +13,17 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Secondary"
-                     Priority="0" />
+                     Priority="0" 
+                     Text="Modifier"
+                     Clicked="OnClickModifActPayante"/>
+        <ToolbarItem Order="Secondary"
+                     Priority="0" 
+                     Text="Supprimer"
+                     Clicked="OnClickSupprActPayante"/>
+        <ToolbarItem Order="Secondary"
+                     Priority="0" 
+                     Text="Supprimer Teammates"
+                     Clicked="OnClickSupprTeammates"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -26,7 +36,7 @@
                     <Label Text="-" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <Label Text="Séance de jogging" TextColor="Black" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+                    <Label Text="Match de football" TextColor="Black" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
                 </StackLayout>
             </StackLayout>
 
@@ -67,11 +77,11 @@
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                     <StackLayout Orientation="Vertical" Padding="-25,37,0,30">
                         <Label Text="Lieu de rendez-vous" TextColor="Black"  FontFamily="rubik"/>
-                        <Label Text="Plage des Sables d'Or ANGLET" TextColor="Black"  FontFamily="rubikI"/>
+                        <Label Text="Stade Saint Jean ANGLET" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
                         <Label Text="Horaires" TextColor="Black"  FontFamily="rubik"/>
-                        <Label Text="19h00 - 21h00" TextColor="Black"  FontFamily="rubikI"/>
+                        <Label Text="14h00 - 15h30" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
                         <Label Text="Tarif" TextColor="Black"  FontFamily="rubik"/>
@@ -79,7 +89,7 @@
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
                         <Label Text="Niveau" TextColor="Black"  FontFamily="rubik"/>
-                        <Label Text="Avancé" TextColor="Black"  FontFamily="rubikI"/>
+                        <Label Text="Amateur" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
@@ -104,7 +114,8 @@
                         BorderColor="Black" 
                         BorderWidth="2" 
                         BackgroundColor="White"
-                        WidthRequest="125"/>
+                        WidthRequest="125"
+                        Clicked="OnClickInscriptionActPayante"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

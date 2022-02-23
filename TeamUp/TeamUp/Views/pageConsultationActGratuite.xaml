@@ -13,7 +13,17 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Secondary"
-                     Priority="0" />
+                     Priority="0" 
+                     Text="Modifier"
+                     Clicked="OnClickModifActGratuite"/>
+        <ToolbarItem Order="Secondary"
+                     Priority="0" 
+                     Text="Supprimer"
+                     Clicked="OnClickSupprActGratuite"/>
+        <ToolbarItem Order="Secondary"
+                     Priority="0" 
+                     Text="Supprimer Teammates"
+                     Clicked="OnClickSupprTeammates"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
@@ -94,7 +104,8 @@
                         BorderColor="Black" 
                         BorderWidth="2" 
                         BackgroundColor="White"
-                        WidthRequest="125"/>
+                        WidthRequest="125"
+                        Clicked="OnClickInscriptionActGratuite"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

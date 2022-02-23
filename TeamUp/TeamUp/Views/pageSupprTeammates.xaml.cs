@@ -10,21 +10,17 @@ using Xamarin.Forms.Xaml;
 namespace TeamUp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class pageInscription : ContentPage
+    public partial class pageSupprTeammates : ContentPage
     {
-        public pageInscription()
+        public pageSupprTeammates()
         {
             InitializeComponent();
         }
-
-        public void OnDateSelected(object sender, EventArgs e)
+        private async void OnClickSupprTeammate(object sender, EventArgs e)
         {
+            //mettre condition mot de passe et identifiant
 
-        }
-
-        private async void OnClickConnexion(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new pageConnexion());
+            await Navigation.PushAsync(new pageSupprTeammate()); // renvoie sur la page d'accueil
         }
     }
 }

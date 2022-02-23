@@ -4,16 +4,51 @@
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="TeamUp.Views.pageAccueil">
 
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Team Up" 
+                   TextColor="White"
+                   FontFamily="rubikB"
+                   FontSize="Large"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="profil.png"
                      Order="Primary"
                      Priority="0" 
                      Clicked="OnClickProfil"/>
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
-        
+
         <StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="#24b6ff">
+                <Label Text="Filtrer par"
+                       FontFamily="rubik"
+                       FontSize="Medium"
+                       TextColor="White"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"/>
+                <Picker x:Name="pickerSport"
+                                Title="Sport"
+                                FontSize="Medium"
+                                TitleColor="White"
+                                HorizontalTextAlignment="Center"
+                                WidthRequest="100"
+                                HorizontalOptions="CenterAndExpand">
+                </Picker>
+                <Picker x:Name="pickerLieu"
+                                Title="Lieu"
+                                FontSize="Medium"
+                                TitleColor="White"
+                                HorizontalTextAlignment="Center"
+                                WidthRequest="100"
+                                HorizontalOptions="CenterAndExpand">
+                </Picker>
+            </StackLayout>
+            
             <maps:Map>
                 <x:Arguments>
                     <maps:MapSpan>
@@ -49,13 +84,15 @@
                     BackgroundColor="White"
                     Clicked="OnClickActPayante"/>
             </StackLayout>
+            
             <StackLayout Orientation="Horizontal"
                          BackgroundColor="#24b6ff"
                          Spacing="30">
                 <ImageButton Source="convo_petite.png"
                              BackgroundColor="#24b6ff"
                              HeightRequest="40"
-                             HorizontalOptions="CenterAndExpand"/>
+                             HorizontalOptions="CenterAndExpand"
+                             Clicked="OnClickMessAccueil"/>
                 <ImageButton Source="plus.png"
                              BackgroundColor="#24b6ff"
                              HeightRequest="40"
@@ -65,7 +102,8 @@
                 <ImageButton Source="histo.png"
                              BackgroundColor="#24b6ff"
                              HeightRequest="40"
-                             HorizontalOptions="CenterAndExpand"/>
+                             HorizontalOptions="CenterAndExpand"
+                             Clicked="OnClickSuiviAct"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
