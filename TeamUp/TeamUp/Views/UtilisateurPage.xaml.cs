@@ -16,7 +16,7 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UtilisateurPage : ContentPage
     {
-        private const string url = "http://192.168.1.13/Api/utilisateurs/2";  //changer l'ip avec votre ip: ouvrir le cmd et lancer la commande ipconfig. 
+        private const string url = "http://192.168.1.38/Api/utilisateur.php";  //changer l'ip avec votre ip: ouvrir le cmd et lancer la commande ipconfig. 
                                                                               //Copier coller l'ipv4.
         private HttpClient _client = new HttpClient();
         private ObservableCollection<Utilisateur> _utilisateurs;

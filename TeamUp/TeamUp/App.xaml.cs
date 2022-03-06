@@ -3,6 +3,7 @@ using TeamUp.Services;
 using TeamUp.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TeamUp.Models;
 
 [assembly: ExportFont("Rubik-Regular.ttf", Alias = "rubik")]
 [assembly: ExportFont("Rubik-Bold.ttf", Alias = "rubikB")]
@@ -12,13 +13,13 @@ namespace TeamUp
 {
     public partial class App : Application
     {
-
+        public static Utilisateur utilisateur { get; set; }
         public App()
         {
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage(new UtilisateurPage())
+            MainPage = new NavigationPage(new pageConnexion())
             {
                 BarBackgroundColor = Color.FromHex("#24b6ff")
             };

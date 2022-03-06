@@ -29,11 +29,13 @@
                        Text="Prenom" 
                        TextColor="Black" 
                        FontFamily="rubik" />
-                <Entry IsPassword="False" 
+                <Entry x:Name="Nom"
+                       IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
                        ReturnType="Go" 
                        Grid.Row="1"/>
-                <Entry IsPassword="False" 
+                <Entry x:Name="Prenom"
+                       IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
                        ReturnType="Go" 
                        Grid.Row="1" 
@@ -54,7 +56,8 @@
                    FontFamily="rubik" />
 
             <StackLayout>
-                <Entry IsPassword="False" 
+                <Entry x:Name="Identifiant"
+                       IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
                        ReturnType="Go"/>
             </StackLayout>
@@ -64,7 +67,8 @@
                    FontFamily="rubik" />
 
             <StackLayout>
-                <Entry IsPassword="False" 
+                <Entry x:Name="Mail"
+                       IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
                        ReturnType="Go"/>
             </StackLayout>
@@ -74,8 +78,15 @@
                    FontFamily="rubik" />
 
             <StackLayout>
-                <local:voirMotDePasse WidthRequest="100" 
-                                      HeightRequest="50" />
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="MotDePasse" 
+                           WidthRequest="250"/>
+                    <ImageButton BackgroundColor="Transparent"
+                                 Source="oeil_cache.png" 
+                                 Clicked="ImageButton_Clicked"
+                                 WidthRequest="100"
+                                 HeightRequest="50"/>
+                </StackLayout>
             </StackLayout>
 
 

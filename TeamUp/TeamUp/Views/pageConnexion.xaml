@@ -25,7 +25,8 @@
             
             <!-- Saisie de l'identifiant ou de l'adresse mail -->
             <StackLayout Padding="26,0,20,0">
-                <Entry IsPassword="False" 
+                <Entry x:Name="identifiantOrEmail"
+                       IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
                        ReturnType="Go"/>
             </StackLayout>
@@ -47,8 +48,15 @@
 
             <!-- Saisie du mot de passe -->
             <StackLayout Padding="26,0,20,0">
-                <local:voirMotDePasse WidthRequest="100" 
-                                      HeightRequest="50" />
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="MotDePasse" 
+                           WidthRequest="250"/>
+                    <ImageButton BackgroundColor="Transparent"
+                                 Source="oeil_cache.png" 
+                                 Clicked="ImageButton_Clicked"
+                                 WidthRequest="100"
+                                 HeightRequest="50"/>
+                </StackLayout>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" 
@@ -79,8 +87,6 @@
                         BorderWidth="3" 
                         BackgroundColor="White"/>
             </StackLayout>
-
-            <Label x:Name="motDePasse"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TeamUp.Models
 {
-    class Utilisateur
+    public class Utilisateur
     {
         public string _0 { get; set; }
         public string id { get; set; }
@@ -22,5 +22,28 @@ namespace TeamUp.Models
         public string mot_de_passe { get; set; }
         public string _7 { get; set; }
         public string profil_id { get; set; }
+
+        public Utilisateur(string identifiant, string nom, string prenom, string dateNaissance, string email, string motDePasse)
+        {
+            this._1 = identifiant;
+            this.identifiant = identifiant;
+            this._2 = nom;
+            this.nom = nom;
+            this._3 = prenom;
+            this.prenom = prenom;
+            this._4 = dateNaissance;
+            this.date_naissance = dateNaissance;
+            this._5 = email;
+            this.email = email;
+            this._6 = motDePasse;
+            this.mot_de_passe = motDePasse;
+        }
+
+        public String toString()
+        {
+            string resultat;
+            resultat = this.identifiant + " " + this.nom + " " + this.prenom + " " + this.date_naissance + " " + this.email + " " + this.mot_de_passe;
+            return resultat;
+        }
     }
 }

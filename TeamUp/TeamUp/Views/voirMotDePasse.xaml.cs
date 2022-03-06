@@ -12,11 +12,12 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class voirMotDePasse : ContentView
     {
+        
         public voirMotDePasse()
         {
             InitializeComponent();
             MotDePasse.IsPassword = true;
-        }
+    }
         private void ImageButton_Clicked(object sender, EventArgs e)
         {
             var imageButton = sender as ImageButton;
