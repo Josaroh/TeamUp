@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamUp.Views.pageCreationAct">
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Créer une activité" 
+                   TextColor="White" 
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="10,20,10,10">
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                    <DatePicker x:Name="startDatePicker"
+                                Format="dd MMM"
+                                DateSelected="OnDateSelected"
+                                WidthRequest="80"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                    <Label Text="-" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                    <Entry IsPassword="False" 
+                           ClearButtonVisibility="WhileEditing" 
+                           ReturnType="Go" 
+                           WidthRequest="200"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="45,10,10,20">
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal" Padding="0,50,0,30">
+                        <Image Source="icon_ping.jpg" WidthRequest="40"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,20,0,30">
+                        <Image Source="icon_timer.jpg" WidthRequest="35"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,20,0,30">
+                        <Image Source="icon_moula.jpg" WidthRequest="40"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,20,0,30">
+                        <Image Source="icon_croissance.jpg" WidthRequest="45"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,5,0,30">
+                        <Image Source="profil_noir.png" WidthRequest="40."/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal" Padding="0,25,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,-40,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Vertical" Padding="-25,37,0,20">
+                        <Label Text="Lieu de rendez-vous *" TextColor="Black"  FontFamily="rubik"/>
+                        <Entry IsPassword="False" 
+                           ClearButtonVisibility="WhileEditing" 
+                           ReturnType="Go" 
+                           WidthRequest="200"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
+                        <Label Text="Horaires *" TextColor="Black"  FontFamily="rubik"/>
+                        <Entry IsPassword="False" 
+                           ClearButtonVisibility="WhileEditing" 
+                           ReturnType="Go" 
+                           WidthRequest="200"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
+                        <Label Text="Tarif" TextColor="Black"  FontFamily="rubik"/>
+                        <Entry IsPassword="False" 
+                           ClearButtonVisibility="WhileEditing" 
+                           ReturnType="Go" 
+                           WidthRequest="200"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
+                        <Label Text="Niveau *" TextColor="Black"  FontFamily="rubik"/>
+                        <Picker x:Name="picker"
+                                Title="Choix du niveau"
+                                FontSize="Small"
+                                TitleColor="LightGray">
+                        </Picker>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Padding="-25,0,0,0">
+                        <Label Text="Nombre de Teammates *" TextColor="Black"  FontFamily="rubik"/>
+                        <Entry IsPassword="False" 
+                               ClearButtonVisibility="WhileEditing" 
+                               ReturnType="Go" 
+                               WidthRequest="200"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Padding="10,0,0,0">
+                <Label Text="Veuillez saisir les champs obligatoires (*)" TextColor="Red"  FontFamily="rubik"/>
+            </StackLayout>
+            
+            <StackLayout Padding="10,10,10,10">
+                <Button Text="Enregistrer"
+                        HorizontalOptions="End"
+                        FontFamily="rubik"
+                        TextColor="Black" 
+                        BorderColor="Black" 
+                        BorderWidth="2" 
+                        BackgroundColor="White"
+                        WidthRequest="125"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

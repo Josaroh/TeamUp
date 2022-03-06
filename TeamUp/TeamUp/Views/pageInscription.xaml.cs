@@ -21,5 +21,10 @@ namespace TeamUp.Views
         {
 
         }
+
+        private async void OnClickConnexion(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new pageConnexion());
+        }
     }
 }

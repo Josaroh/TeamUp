@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamUp.Views.pageSupprTeammates">
+
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Supprimer des Teammates" 
+                   TextColor="White" 
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Padding="15,30,0,15" Text="Teammates inscrits (3/4)" TextColor="Black"  FontFamily="rubikB"/>
+
+            <TableView Intent="Settings">
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
+                                <Label Text="LuluChacha" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
+                                <Label Text="HugoLeBeau" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
+                                <Label Text="TommyPrincesse" TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <StackLayout Orientation="Horizontal" Padding="10,10,10,10" HorizontalOptions="CenterAndExpand">
+                <Button Text="Annuler"
+                        FontFamily="rubik"
+                        TextColor="Black" 
+                        BorderColor="Black" 
+                        BorderWidth="2" 
+                        BackgroundColor="White"
+                        WidthRequest="125"/>
+                <Button Text="Enregistrer"
+                        FontFamily="rubik"
+                        TextColor="Black" 
+                        BorderColor="Black" 
+                        BorderWidth="2" 
+                        BackgroundColor="White"
+                        WidthRequest="125"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
