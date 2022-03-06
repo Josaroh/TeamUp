@@ -14,9 +14,13 @@ namespace TeamUp
     {
         private string dbPath = Path.Combine(FileSystem.AppDataDirectory,"database.db3");
 
+
+
         public static VisiteurRepository VisiteurRepository { get; set; }
 
         public static Visiteur visiteur { get; set; }
+
+        public static MainTest Test { get; set; }
 
 
 
@@ -27,7 +31,7 @@ namespace TeamUp
             VisiteurRepository = new VisiteurRepository(dbPath);
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage(new pageConnexion())
+            MainPage = new NavigationPage(new UtilisateurPage())
             {
                 BarBackgroundColor = Color.FromHex("#24b6ff")
             };
@@ -35,6 +39,7 @@ namespace TeamUp
 
         protected override void OnStart()
         {
+            
         }
 
         protected override void OnSleep()
@@ -43,6 +48,7 @@ namespace TeamUp
 
         protected override void OnResume()
         {
+            Console.WriteLine(dbPath);
         }
     }
 }
