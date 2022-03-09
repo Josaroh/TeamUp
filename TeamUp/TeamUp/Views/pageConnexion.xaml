@@ -6,7 +6,7 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="30,10,30,10">
+            <StackLayout Padding="30,0,30,10">
                 <Image Source="logo_couleur_teamup_FINAL.jpg" 
                        WidthRequest="200"/>
             </StackLayout>
@@ -14,12 +14,12 @@
             <Label Text="Connexion" 
                    FontFamily="rubikB"
                    FontSize="30" 
-                   Padding="30,10,30,10" 
+                   Padding="30,30,30,10" 
                    HorizontalTextAlignment="Center"
                    TextColor="White"/>
             <Label Text="Identifiant ou adresse e-mail" 
                    FontSize="16" 
-                   Padding="30,0,10,0" 
+                   Padding="30,40,10,0" 
                    FontFamily="rubikB"
                    TextColor="White"/>
             
@@ -41,6 +41,7 @@
                 <Label Text="Mot de passe oublié ?" 
                        FontFamily="rubik"
                        TextDecorations="Underline" 
+                       FontSize="Micro"
                        VerticalTextAlignment="Center" 
                        HorizontalOptions="EndAndExpand" 
                        TextColor="#1950a3"/>
@@ -63,7 +64,7 @@
                          Padding="22,0,22,0">
                 <CheckBox Color="White"/>
                 <Label Text="Rester connecté" 
-                       FontSize="16" 
+                       FontSize="12" 
                        VerticalTextAlignment="Center" 
                        FontFamily="rubikB"
                        TextColor="White"/>
@@ -71,6 +72,7 @@
                 <Label Text="Créer un compte"
                        x:Name="lblclick"
                        FontFamily="rubik"
+                       FontSize="Micro"
                        VerticalTextAlignment="Center"
                        HorizontalOptions="EndAndExpand" 
                        TextColor="#1950a3"
@@ -81,8 +83,9 @@
                 <Button Clicked="OnClickSeConnecter" 
                         Text="Se connecter"
                         FontFamily="rubikB"
+                        FontSize="Micro"
                         TextColor="#1950a3" 
-                        WidthRequest="135" 
+                        WidthRequest="150" 
                         HorizontalOptions="End" 
                         BorderWidth="3" 
                         BackgroundColor="White"/>

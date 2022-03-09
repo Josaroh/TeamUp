@@ -37,7 +37,7 @@
                     <RowDefinition Height="40" />
                 </Grid.RowDefinitions>
                 <Label Text="Nom" 
-                       FontSize="Medium" 
+                       FontSize="Small" 
                        TextColor="Black"/>
                 <Entry Grid.Column="1"
                        IsPassword="False" 
@@ -45,7 +45,7 @@
                        ReturnType="Go"/>
                 <Label Grid.Row="1"
                        Text="Prenom" 
-                       FontSize="Medium"
+                       FontSize="Small"
                        TextColor="Black" />
                 <Entry Grid.Row="1" 
                        Grid.Column="1"
@@ -54,16 +54,17 @@
                        ReturnType="Go"/>
                 <Label Grid.Row="2"
                        Text="Date de naissance"
-                       FontSize="Medium"
+                       FontSize="Small"
                        TextColor="Black"/>
                 <DatePicker Grid.Row="2" 
                             Grid.Column="1"
                             x:Name="startDatePicker"
                             Format="dd/MM/yyyy"
+                            FontSize="Small"
                             DateSelected="OnDateSelected"/>
                 <Label Grid.Row="3"
                        Text="Identifiant"
-                       FontSize="Medium"
+                       FontSize="Small"
                        TextColor="Black" />
                 <Entry Grid.Row="3" 
                        Grid.Column="1"
@@ -72,7 +73,7 @@
                        ReturnType="Go"/>
                 <Label Grid.Row="4"
                        Text="E-mail"
-                       FontSize="Medium"
+                       FontSize="Small"
                        TextColor="Black" />
                 <Entry Grid.Row="4" 
                        Grid.Column="1"
@@ -81,7 +82,7 @@
                        ReturnType="Go"/>
                 <Label Grid.Row="5"
                        Text="Localisation" 
-                       FontSize="Medium"
+                       FontSize="Small"
                        TextColor="Black" />
                 <Entry Grid.Row="5" 
                        Grid.Column="1"
@@ -90,20 +91,20 @@
                        ReturnType="Go"/>
                 <Label Grid.Row="6"
                        Text="Périmètre"
-                       FontSize="Medium"
+                       FontSize="Small"
                        TextColor="Black" />
                 <Slider Grid.Row="6"
                         Grid.Column="1"
                         Maximum="30"/>
                 <Label Grid.Row="7"
                        Text="Préférences" 
-                       FontSize="Medium"
+                       FontSize="Small"
                        TextColor="Black" />
                 <Picker Grid.Row="7"
                         Grid.Column="1"
                         x:Name="picker"
                         Title="Choix d'un sport"
-                        FontSize="Medium"
+                        FontSize="Small"
                         TitleColor="LightGray">
                         
                 </Picker>
@@ -112,8 +113,9 @@
             <StackLayout>
                 <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 10">
                     <Label Text="Changer le mot de passe"
-                       x:Name="lblclick"
+                        x:Name="lblclick"
                        VerticalTextAlignment="Center"
+                           FontSize="Micro"
                        TextColor="#1950a3"
                        TextDecorations="Underline"/>
 
@@ -128,12 +130,13 @@
                         <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
                     <Button Text="Enregistrer" 
-                    TextColor="Black" 
-                    WidthRequest="150" 
-                    HorizontalOptions="Start" 
-                    BorderColor="Black" 
-                    BorderWidth="3" 
-                    BackgroundColor="White"/>
+                            TextColor="Black" 
+                            WidthRequest="150" 
+                            HorizontalOptions="Start" 
+                            BorderColor="Black" 
+                            BorderWidth="3" 
+                            FontSize="Micro"
+                            BackgroundColor="White"/>
 
                     <Button Clicked="OnClickDeconnexion" 
                             Text="Se déconnecter" 
@@ -143,6 +146,7 @@
                             BorderColor="Black" 
                             BorderWidth="3" 
                             BackgroundColor="White"
+                            FontSize="Micro"
                             Grid.Column="1"/>
                 </Grid>
             </StackLayout>

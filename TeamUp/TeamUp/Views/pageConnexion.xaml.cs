@@ -16,9 +16,8 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageConnexion : ContentPage
     {
-        static Utilisateur utilisateurConnecter;
-        private string url = "http://10.3.229.19/Api/utilisateur.php?identifiant=";
-        //private string url = "http://192.168.1.38/Api/utilisateur.php?identifiant=";
+        //private string url = "http://10.3.229.19/Api/utilisateur.php?identifiant=";
+        private string url = "http://192.168.1.38/Api/utilisateur.php?identifiant=";
 
         private HttpClient client = new HttpClient();
 
@@ -78,7 +77,6 @@ namespace TeamUp.Views
 
             if(existe == true)
             {
-                utilisateurConnecter.identifiant = identifiant;
                 await Navigation.PushAsync(new pageAccueil()); // renvoie sur la page d'accueil
             }
             else

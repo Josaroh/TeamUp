@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,6 +26,8 @@ namespace TeamUp.Views
             ListeLieu.Add("Biarritz");
 
             pickerLieu.ItemsSource = ListeLieu;
+
+            var res = Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromMinutes(1)));
         }
 
         private async void OnClickProfil(object sender, EventArgs e)

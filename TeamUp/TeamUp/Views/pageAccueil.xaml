@@ -32,20 +32,20 @@
                        VerticalOptions="CenterAndExpand"
                        HorizontalOptions="CenterAndExpand"/>
                 <Picker x:Name="pickerSport"
-                                Title="Sport"
-                                FontSize="Medium"
-                                TitleColor="White"
-                                HorizontalTextAlignment="Center"
-                                WidthRequest="100"
-                                HorizontalOptions="CenterAndExpand">
+                        Title="Sport"
+                        FontSize="Medium"
+                        TitleColor="White"
+                        HorizontalTextAlignment="Center"
+                        WidthRequest="100"
+                        HorizontalOptions="CenterAndExpand">
                 </Picker>
                 <Picker x:Name="pickerLieu"
-                                Title="Lieu"
-                                FontSize="Medium"
-                                TitleColor="White"
-                                HorizontalTextAlignment="Center"
-                                WidthRequest="100"
-                                HorizontalOptions="CenterAndExpand">
+                        Title="Lieu"
+                        FontSize="Medium"
+                        TitleColor="White"
+                        HorizontalTextAlignment="Center"
+                        WidthRequest="100"
+                        HorizontalOptions="CenterAndExpand">
                 </Picker>
             </StackLayout>
             

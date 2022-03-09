@@ -15,12 +15,9 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageCreationAct : ContentPage
     {
-        private string urlAct = "http://10.3.229.19/Api/activites";
-        //private string urlAct = "http://192.168.1.38/Api/activites";
-
-        private string urlUser = "http://10.3.229.19/Api/utilisateur.php?identifiant=";
-        //private string urlUser = "http://192.168.1.38/Api/utilisateur.php?identifiant=";
-
+        //private string urlAct = "http://10.3.229.19/Api/activites";
+        private string urlAct = "http://192.168.1.38/Api/activites";
+        
         private HttpClient client = new HttpClient();
         public pageCreationAct()
         {
@@ -41,16 +38,6 @@ namespace TeamUp.Views
 
         private async void OnClickCreationAct(object sender, EventArgs e)
         {
-            var content = await client.GetStringAsync(urlUser);
-            var utilisateur = JsonConvert.DeserializeObject<List<Utilisateur>>(content);
-
-            foreach (Utilisateur user in utilisateur)
-            {
-                App.utilisateur = user;
-                Console.WriteLine("La liste est " + user.identifiant);
-                Console.WriteLine("L'utilisateur est " + user.identifiant);
-            }
-
             var dateAct = startDatePicker.Date.ToString().Substring(0, 10);
             var nom = Nom.Text;
             var lieu = Lieu.Text;
@@ -80,11 +67,11 @@ namespace TeamUp.Views
             // ne push pas dans la BD
 
             string contentType = "application/json";
-            var actTerminee = false;
+            var actTerminee = "false";
 
             JObject json = new JObject
                 {
-                    // récupérer l'id de la personne connectée
+                    { "a_pour_team_leader_id", App.utilisateur.id },
                     { "titre", nom },
                     { "date", dateAct },
                     { "heure_debut", heureDeb },
@@ -94,7 +81,6 @@ namespace TeamUp.Views
                     { "niveau", niveau },
                     { "nbr_participant", nbTeam },
                     { "activite_terminee", actTerminee }
-                    // récupérer l'id de l'activité
                 };
 
             
