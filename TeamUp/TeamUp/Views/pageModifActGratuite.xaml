@@ -29,7 +29,7 @@
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"
-                           Placeholder="Séance de Jogging"
+                           x:Name="Nom"
                            PlaceholderColor="Black"/>
                 </StackLayout>
             </StackLayout>
@@ -75,7 +75,7 @@
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"
-                           Placeholder="Plage des Sables d'Or ANGLET"
+                           x:Name="Lieu"
                            PlaceholderColor="Black"
                            FontSize="Small"/>
                     </StackLayout>
@@ -85,13 +85,13 @@
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"
-                           Placeholder="19h00 - 21h00"
+                           x:Name="Horaires"
                            PlaceholderColor="Black"
                            FontSize="Small"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
                         <Label Text="Niveau *" TextColor="Black"  FontFamily="rubik"/>
-                        <Picker x:Name="picker"
+                        <Picker x:Name="Picker"
                                 Title="Amateur"
                                 FontSize="Small"
                                 TitleColor="LightGray">
@@ -103,7 +103,7 @@
                                ClearButtonVisibility="WhileEditing" 
                                ReturnType="Go" 
                                WidthRequest="200"
-                               Placeholder="10"
+                               x:Name="NbTeam"
                                PlaceholderColor="Black"
                                FontSize="Small"/>
                     </StackLayout>

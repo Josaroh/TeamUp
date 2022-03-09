@@ -10,15 +10,13 @@ using System.Net.Http;
 using System.Collections.ObjectModel;
 using TeamUp.Models;
 using Newtonsoft.Json;
+using Xamarin.Essentials;
 
 namespace TeamUp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageConnexion : ContentPage
     {
-        //private string url = "http://10.3.229.19/Api/utilisateur.php?identifiant=";
-        private string url = "http://192.168.1.38/Api/utilisateur.php?identifiant=";
-
         private HttpClient client = new HttpClient();
 
         public pageConnexion()
@@ -27,6 +25,8 @@ namespace TeamUp.Views
             MotDePasse.IsPassword = true;
             //permet d'ajouter l'événement du clique sur un text
             lblClickFucn();
+            var longitude = "";
+            var latitude = "";
         }
 
         //événement du clique sur lblclick
@@ -47,6 +47,8 @@ namespace TeamUp.Views
         //événement du clic sur le bouton OnClickSeConnecter
         private async void OnClickSeConnecter(object sender, EventArgs e)
         {
+            string url = "http://192.168.1.38/Api/utilisateur.php?identifiant=";
+            //private string url = "http://10.3.229.19/Api/utilisateur.php?identifiant=";
             var identifiant = identifiantOrEmail.Text;
             var motDePasse = MotDePasse.Text;
 
@@ -77,6 +79,11 @@ namespace TeamUp.Views
 
             if(existe == true)
             {
+                /*var res = await Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromSeconds(10)));
+                if (res != null)
+                {
+                    Console.WriteLine($"Latitude: {res.Latitude}, Longitude: {res.Longitude}");
+                }*/
                 await Navigation.PushAsync(new pageAccueil()); // renvoie sur la page d'accueil
             }
             else
@@ -84,6 +91,8 @@ namespace TeamUp.Views
                 DisplayAlert("Identifiant erroné", "Veuillez saisir à nouveau votre identifiant", "Ok");
                 return;
             }
+
+            
         }
 
         //événement quand l'utilisateur a entré son mot de passe

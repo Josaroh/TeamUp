@@ -26,8 +26,18 @@ namespace TeamUp.Views
             ListeLieu.Add("Biarritz");
 
             pickerLieu.ItemsSource = ListeLieu;
+        }
 
-            var res = Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromMinutes(1)));
+        protected async override void OnAppearing() 
+        {
+            var res = await Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromSeconds(10)));
+            if (res != null)
+            {
+                lat = res.Latitude+100;
+                lng = res.Longitude;
+                map.IsShowingUser = true;
+                Console.WriteLine($"Latitude: {res.Latitude}, Longitude: {res.Longitude}");
+            }
         }
 
         private async void OnClickProfil(object sender, EventArgs e)

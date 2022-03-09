@@ -49,14 +49,14 @@
                 </Picker>
             </StackLayout>
             
-            <maps:Map>
+            <maps:Map x:Name="map">
                 <x:Arguments>
                     <maps:MapSpan>
                         <x:Arguments>
                             <maps:Position>
                                 <x:Arguments>
-                                    <x:Double>43.4775800</x:Double>
-                                    <x:Double>-1.5086674</x:Double>
+                                    <x:Double x:Name="lat">43.4775552</x:Double>
+                                    <x:Double x:Name="lng">-1.5088188</x:Double>
                                 </x:Arguments>
                             </maps:Position>
                             <x:Double>0.01</x:Double>
