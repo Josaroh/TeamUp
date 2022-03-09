@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,9 +15,10 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageInscription : ContentPage
     {
-        private string url = "http://192.168.1.38/Api/utilisateurs";  //changer l'ip avec votre ip: ouvrir le cmd et lancer la commande ipconfig. 
-                                                                                      //Copier coller l'ipv4.
-        private HttpClient _client = new HttpClient();
+        private string url = "http://10.3.229.19/Api/utilisateurs";
+        //private string url = "http://192.168.1.38/Api/utilisateurs";
+
+        private HttpClient client = new HttpClient();
         private ObservableCollection<Utilisateur> _utilisateurs;
         public pageInscription()
         {
@@ -35,7 +34,6 @@ namespace TeamUp.Views
 
         private async void OnClickConnexion(object sender, EventArgs e)
         {
-            //mettre condition mot de passe et identifiant
             var nom = Nom.Text;
             var prenom = Prenom.Text;
             var dateNaiss = startDatePicker.Date.ToString().Substring(0, 10);
@@ -43,37 +41,54 @@ namespace TeamUp.Views
             var mail = Mail.Text;
             var motDePasse = MotDePasse.Text;
 
+
             if (string.IsNullOrEmpty(nom) || string.IsNullOrEmpty(prenom) || string.IsNullOrEmpty(dateNaiss) || string.IsNullOrEmpty(identifiant) || string.IsNullOrEmpty(mail) || string.IsNullOrEmpty(motDePasse))
             {
                 DisplayAlert("Un ou plusieurs champs vides", "Veuillez saisir les informations manquantes", "Ok");
                 return;
             }
 
-            //Utilisateur utilisateur = new Utilisateur(identifiant, nom, prenom, dateNaiss, mail, motDePasse);
+            // vérification si identifiant existe
 
-            //Console.WriteLine("Nathan est relou " + utilisateur.toString());
+            var contentUtilisateur = await client.GetStringAsync(url);
+            var utilisateur = JsonConvert.DeserializeObject<List<Utilisateur>>(contentUtilisateur);
 
-            //String jsonUtilisateur = JsonConvert.SerializeObject(utilisateur);
+            bool existe = false;
 
-            //var data = "{ \"identifiant\" : \""+identifiant+"\" , \"nom\" : \"" + nom + "\" , \"prenom\" : \"" + prenom + "\" , \"date_naissance\" : \"" + dateNaiss + "\" , \"email\" : \"" + mail + "\" , \"mot_de_passe\" : \"" + motDePasse + "\"}";
+            foreach (Utilisateur user in utilisateur)
+            {
+                if(user.identifiant == identifiant || user.email == mail) 
+                { 
+                    existe = true; 
+                }
+            }
 
-            //JObject json = JObject.Parse(data);
+            if (existe == false)
+            {
+                // création du compte et ajout dans la BD
 
-            //var contentRequest = new StringContent(json, Encoding.UTF8, "application/json");
+                string contentType = "application/json";
 
-            //Console.WriteLine("woa trop beau ce json " + data);
+                JObject json = new JObject
+                {
+                    { "identifiant", identifiant },
+                    { "nom", nom },
+                    { "prenom", prenom },
+                    { "date_naissance", dateNaiss },
+                    { "email", mail },
+                    { "mot_de_passe", motDePasse }
+                };
 
-            //await _client.PostAsync(url, contentRequest);
+                var content = new StringContent(json.ToString(), Encoding.UTF8, contentType);
+                await client.PostAsync(url, content);
 
-            //Console.WriteLine("Nathan est relou " + jsonUtilisateur);
-
-            //HttpContent content = new StringContent(jsonUtilisateur);
-
-            //await _client.PostAsync(url, content);
-
-
-
-            await Navigation.PushAsync(new pageConnexion());
+                await Navigation.PushAsync(new pageConnexion()); // renvoie sur la page de connexion
+            }
+            else
+            {
+                DisplayAlert("Identifiant ou adresse mail déjà existants", "Veuillez saisir un nouvel identifiant ou une nouvelle adresse mail", "Ok");
+                return;
+            }
         }
 
         private void ImageButton_Clicked(object sender, EventArgs e)

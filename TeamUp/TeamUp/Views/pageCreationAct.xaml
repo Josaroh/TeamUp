@@ -24,7 +24,8 @@
                     <Label Text="-" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <Entry IsPassword="False" 
+                    <Entry x:Name="Nom"
+                           IsPassword="False" 
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"/>
@@ -77,28 +78,32 @@
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                     <StackLayout Orientation="Vertical" Padding="-25,37,0,20">
                         <Label Text="Lieu de rendez-vous *" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry IsPassword="False" 
+                        <Entry x:Name="Lieu"
+                            IsPassword="False" 
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
                         <Label Text="Horaires *" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry IsPassword="False" 
+                        <Entry x:Name="Horaires"
+                            IsPassword="False" 
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
-                           WidthRequest="200"/>
+                           WidthRequest="200"
+                               Placeholder="00h00 - 00h00"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
                         <Label Text="Tarif" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry IsPassword="False" 
+                        <Entry x:Name="Tarif"
+                            IsPassword="False" 
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
                         <Label Text="Niveau *" TextColor="Black"  FontFamily="rubik"/>
-                        <Picker x:Name="picker"
+                        <Picker x:Name="Picker"
                                 Title="Choix du niveau"
                                 FontSize="Small"
                                 TitleColor="LightGray">
@@ -106,7 +111,8 @@
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,0">
                         <Label Text="Nombre de Teammates *" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry IsPassword="False" 
+                        <Entry x:Name="NbTeam"
+                            IsPassword="False" 
                                ClearButtonVisibility="WhileEditing" 
                                ReturnType="Go" 
                                WidthRequest="200"/>
@@ -114,10 +120,6 @@
                 </StackLayout>
             </StackLayout>
 
-            <StackLayout Padding="10,0,0,0">
-                <Label Text="Veuillez saisir les champs obligatoires (*)" TextColor="Red"  FontFamily="rubik"/>
-            </StackLayout>
-            
             <StackLayout Padding="10,10,10,10">
                 <Button Text="Enregistrer"
                         HorizontalOptions="End"
@@ -126,7 +128,8 @@
                         BorderColor="Black" 
                         BorderWidth="2" 
                         BackgroundColor="White"
-                        WidthRequest="125"/>
+                        WidthRequest="125"
+                        Clicked="OnClickCreationAct"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

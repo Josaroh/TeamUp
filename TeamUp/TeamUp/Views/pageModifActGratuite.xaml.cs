@@ -16,5 +16,17 @@ namespace TeamUp.Views
         {
             InitializeComponent();
         }
+
+        public void OnDateSelected(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void OnClickActGratuite(object sender, EventArgs e)
+        {
+            //mettre condition mot de passe et identifiant
+
+            await Navigation.PushAsync(new pageConsultationActGratuite()); // renvoie sur la page d'accueil
+        }
     }
 }

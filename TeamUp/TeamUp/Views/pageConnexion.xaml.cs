@@ -16,10 +16,11 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageConnexion : ContentPage
     {
-        private string url = "http://192.168.1.38/Api/utilisateur.php?identifiant=";  //changer l'ip avec votre ip: ouvrir le cmd et lancer la commande ipconfig. 
-                                                                               //Copier coller l'ipv4.
-        private HttpClient _client = new HttpClient();
-        private ObservableCollection<Utilisateur> _utilisateurs;
+        static Utilisateur utilisateurConnecter;
+        private string url = "http://10.3.229.19/Api/utilisateur.php?identifiant=";
+        //private string url = "http://192.168.1.38/Api/utilisateur.php?identifiant=";
+
+        private HttpClient client = new HttpClient();
 
         public pageConnexion()
         {
@@ -47,7 +48,6 @@ namespace TeamUp.Views
         //événement du clic sur le bouton OnClickSeConnecter
         private async void OnClickSeConnecter(object sender, EventArgs e)
         {
-            //mettre condition mot de passe et identifiant
             var identifiant = identifiantOrEmail.Text;
             var motDePasse = MotDePasse.Text;
 
@@ -59,7 +59,7 @@ namespace TeamUp.Views
 
             url += identifiant;
 
-            var content = await _client.GetStringAsync(url);
+            var content = await client.GetStringAsync(url);
             var utilisateur = JsonConvert.DeserializeObject<List<Utilisateur>>(content);
 
             Console.WriteLine("L'identifiant est " + identifiant);
@@ -78,6 +78,7 @@ namespace TeamUp.Views
 
             if(existe == true)
             {
+                utilisateurConnecter.identifiant = identifiant;
                 await Navigation.PushAsync(new pageAccueil()); // renvoie sur la page d'accueil
             }
             else

@@ -94,7 +94,7 @@
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"
-                           Placeholder="14h00-15h30"
+                           Placeholder="14h00 - 15h30"
                            PlaceholderColor="Black"
                            FontSize="Small"/>
                     </StackLayout>
