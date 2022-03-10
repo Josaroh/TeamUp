@@ -48,22 +48,8 @@
                         HorizontalOptions="CenterAndExpand">
                 </Picker>
             </StackLayout>
-            
-            <maps:Map x:Name="map">
-                <x:Arguments>
-                    <maps:MapSpan>
-                        <x:Arguments>
-                            <maps:Position>
-                                <x:Arguments>
-                                    <x:Double x:Name="lat"></x:Double>
-                                    <x:Double x:Name="lng"></x:Double>
-                                </x:Arguments>
-                            </maps:Position>
-                            <x:Double>0.01</x:Double>
-                            <x:Double>0.01</x:Double>
-                        </x:Arguments>
-                    </maps:MapSpan>
-                </x:Arguments>
+
+            <maps:Map x:Name="map" IsShowingUser="True">
             </maps:Map>
             <StackLayout Orientation="Horizontal">
             <Button Text="Gratuite" 
