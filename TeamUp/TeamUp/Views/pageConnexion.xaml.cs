@@ -47,7 +47,8 @@ namespace TeamUp.Views
         //événement du clic sur le bouton OnClickSeConnecter
         private async void OnClickSeConnecter(object sender, EventArgs e)
         {
-            string url = "http://192.168.1.38/Api/utilisateur.php?identifiant=";
+            string url = "http://gestionlocation.ddns.net/utilisateur.php?identifiant=";
+            //string url = "http://192.168.1.38/Api/utilisateur.php?identifiant=";
             //private string url = "http://10.3.229.19/Api/utilisateur.php?identifiant=";
             var identifiant = identifiantOrEmail.Text;
             var motDePasse = MotDePasse.Text;

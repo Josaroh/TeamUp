@@ -15,8 +15,9 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageCreationAct : ContentPage
     {
+        private string urlAct = "http://gestionlocation.ddns.net/activite.php";
         //private string urlAct = "http://10.3.229.19/Api/activites";
-        private string urlAct = "http://192.168.1.38/Api/activites";
+        //private string urlAct = "http://192.168.1.38/Api/activites";
         
         private HttpClient client = new HttpClient();
         public pageCreationAct()

@@ -15,7 +15,8 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageInscription : ContentPage
     {
-        private string url = "http://10.3.229.19/Api/utilisateurs";
+        private string url = "http://gestionlocation.ddns.net/utilisateur.php";
+        //private string url = "http://10.3.229.19/Api/utilisateurs";
         //private string url = "http://192.168.1.38/Api/utilisateurs";
 
         private HttpClient client = new HttpClient();
