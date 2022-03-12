@@ -17,7 +17,8 @@
         <StackLayout BackgroundColor="White" Padding="30,0,30,0">
             <StackLayout Padding="30,10,30,10">
                 <Image Source="NonoPasSportive.jpg"
-                       WidthRequest="150"/>
+                       WidthRequest="150"
+                       x:Name="urlImage"/>
             </StackLayout>
             
             <Label Text="NonoLaNonSportive" 
@@ -25,7 +26,8 @@
                    FontSize="Title" 
                    Padding="30,10,30,10" 
                    HorizontalTextAlignment="Center" 
-                   TextColor="Black"/>
+                   TextColor="Black"
+                   x:Name="Identifiant"/>
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -42,7 +44,8 @@
                 <Entry Grid.Column="1"
                        IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
-                       ReturnType="Go"/>
+                       ReturnType="Go"
+                       x:Name="Nom"/>
                 <Label Grid.Row="1"
                        Text="Prenom" 
                        FontSize="Small"
@@ -51,7 +54,8 @@
                        Grid.Column="1"
                        IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
-                       ReturnType="Go"/>
+                       ReturnType="Go"
+                       x:Name="Prenom"/>
                 <Label Grid.Row="2"
                        Text="Date de naissance"
                        FontSize="Small"
@@ -70,7 +74,8 @@
                        Grid.Column="1"
                        IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
-                       ReturnType="Go"/>
+                       ReturnType="Go"
+                       x:Name="IdentifiantBis"/>
                 <Label Grid.Row="4"
                        Text="E-mail"
                        FontSize="Small"
@@ -79,7 +84,8 @@
                        Grid.Column="1"
                        IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
-                       ReturnType="Go"/>
+                       ReturnType="Go"
+                       x:Name="Mail"/>
                 <Label Grid.Row="5"
                        Text="Localisation" 
                        FontSize="Small"
@@ -88,7 +94,8 @@
                        Grid.Column="1"
                        IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
-                       ReturnType="Go"/>
+                       ReturnType="Go"
+                       x:Name="Localisation"/>
                 <Label Grid.Row="6"
                        Text="Périmètre"
                        FontSize="Small"

@@ -24,7 +24,12 @@ namespace TeamUp.Views
 
         private async void OnClickSupprActGratuite(object sender, EventArgs e)
         {
-            await DisplayAlert("Confirmation de la suppression", "Souhaitez-vous supprimer cette activité ?", "Non", "Oui");
+            bool answer = await DisplayAlert("Confirmation de la suppression", "Souhaitez-vous supprimer cette activité ?", "Non", "Oui");
+
+            if (!answer)
+            {
+                _ = Navigation.PopAsync();
+            }
         }
 
         private async void OnClickSupprTeammates(object sender, EventArgs e)
@@ -34,7 +39,7 @@ namespace TeamUp.Views
 
         private async void OnClickInscriptionActGratuite(object sender, EventArgs e)
         {
-            await DisplayAlert("Confirmation de l'inscription", "Souhaitez-vous participer à cette activité ?", "Non", "Oui");
+            await Navigation.PushAsync(new pageActGratuiteRejointe());
         }
     }
 }

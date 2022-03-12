@@ -16,27 +16,41 @@
         <StackLayout>
             <Label Padding="15,30,0,15" Text="Teammates inscrits (3/4)" TextColor="Black"  FontFamily="rubikB"/>
 
-            <TableView Intent="Settings">
-                <TableRoot>
-                    <TableSection>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
-                                <Label Text="LuluChacha" TextColor="Black"/>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
-                                <Label Text="HugoLeBeau" TextColor="Black"/>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
-                                <Label Text="TommyPrincesse" TextColor="Black"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </TableSection>
-                </TableRoot>
-            </TableView>
+
+            <SwipeView>
+                <SwipeView.RightItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Delete"
+                       IconImageSource="icon_poubelle.png"
+                       BackgroundColor="red"
+                     />
+                    </SwipeItems>
+                </SwipeView.RightItems>
+                <!-- Content -->
+                <TableView Intent="Settings">
+                    <TableRoot>
+                        <TableSection>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
+                                    <Label Text="LuluChacha" TextColor="Black"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
+                                    <Label Text="HugoLeBeau" TextColor="Black"/>
+                                </StackLayout>
+                            </ViewCell>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
+                                    <Label Text="TommyPrincesse" TextColor="Black"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+            </SwipeView>
+
+            
             <StackLayout Orientation="Horizontal" Padding="10,10,10,10" HorizontalOptions="CenterAndExpand">
                 <Button Text="Annuler"
                         FontFamily="rubik"

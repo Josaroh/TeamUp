@@ -15,6 +15,8 @@ namespace TeamUp.Views
         public pageConsultationActPayante()
         {
             InitializeComponent();
+
+            //Jouer avec les bindings
         }
 
         private async void OnClickModifActPayante(object sender, EventArgs e)
@@ -24,7 +26,12 @@ namespace TeamUp.Views
 
         private async void OnClickSupprActPayante(object sender, EventArgs e)
         {
-            await DisplayAlert("Confirmation de la suppression", "Souhaitez-vous supprimer cette activité ?", "Non", "Oui");
+            bool answer = await DisplayAlert("Confirmation de la suppression", "Souhaitez-vous supprimer cette activité ?", "Non", "Oui");
+
+            if (!answer)
+            {
+                _ = Navigation.PopAsync();
+            }
         }
 
         private async void OnClickSupprTeammates(object sender, EventArgs e)
@@ -34,7 +41,12 @@ namespace TeamUp.Views
 
         private async void OnClickInscriptionActPayante(object sender, EventArgs e)
         {
-            await DisplayAlert("Confirmation de l'inscription", "Souhaitez-vous participer à cette activité ?", "Non", "Oui");
+            bool answer = await DisplayAlert("Confirmation de l'inscription", "Souhaitez-vous participer à cette activité ?", "Non", "Oui");
+
+            if (!answer)
+            {
+                _ = Navigation.PushAsync(new pageActPayanteRejointe());
+            }
         }
     }
 }
