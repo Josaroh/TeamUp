@@ -33,8 +33,13 @@ namespace TeamUp.Views
 
         }
 
+
         private async void OnClickConnexion(object sender, EventArgs e)
         {
+
+
+        
+
             var nom = Nom.Text;
             var prenom = Prenom.Text;
             var dateNaiss = startDatePicker.Date.ToString().Substring(0, 10);
@@ -68,9 +73,13 @@ namespace TeamUp.Views
             {
                 // création du compte et ajout dans la BD
 
-                string contentType = "application/json";
+                bool answer = await DisplayAlert("Conditions Générales d'utilisations", "Acceptez-vous nos Conditions générales d'utilisation?", "Non", "Oui");
 
-                JObject json = new JObject
+                if(answer == false)
+                {
+                    string contentType = "application/json";
+
+                    JObject json = new JObject
                 {
                     { "identifiant", identifiant },
                     { "nom", nom },
@@ -80,10 +89,11 @@ namespace TeamUp.Views
                     { "mot_de_passe", motDePasse }
                 };
 
-                var content = new StringContent(json.ToString(), Encoding.UTF8, contentType);
-                await client.PostAsync(url, content);
+                    var content = new StringContent(json.ToString(), Encoding.UTF8, contentType);
+                    await client.PostAsync(url, content);
 
-                await Navigation.PushAsync(new pageConnexion()); // renvoie sur la page de connexion
+                    await Navigation.PushAsync(new pageConnexion()); // renvoie sur la page de connexion
+                }
             }
             else
             {
