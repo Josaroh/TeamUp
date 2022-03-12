@@ -8,6 +8,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
+using Map = Xamarin.Essentials.Map;
 
 namespace TeamUp.Views
 {

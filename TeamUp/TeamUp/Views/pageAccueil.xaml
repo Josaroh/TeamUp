@@ -50,6 +50,16 @@
             </StackLayout>
 
             <maps:Map x:Name="map" IsShowingUser="True">
+                <x:Arguments>
+                    <maps:MapSpan>
+                        <x:Arguments>
+                            <maps:Position x:Name="pos">
+                            </maps:Position>
+                            <x:Double>0.01</x:Double>
+                            <x:Double>0.01</x:Double>
+                        </x:Arguments>
+                    </maps:MapSpan>
+                </x:Arguments>
             </maps:Map>
             <StackLayout Orientation="Horizontal">
             <Button Text="Gratuite" 
