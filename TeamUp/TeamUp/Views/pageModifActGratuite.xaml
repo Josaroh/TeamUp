@@ -118,8 +118,7 @@
                         BorderColor="Black" 
                         BorderWidth="2" 
                         BackgroundColor="White"
-                        WidthRequest="125"
-                        Clicked="OnClickActGratuite"/>
+                        WidthRequest="125"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

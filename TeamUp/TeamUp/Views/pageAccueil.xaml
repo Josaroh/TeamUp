@@ -68,8 +68,7 @@
                     HorizontalOptions="End" 
                     BorderColor="Black"  
                     BorderWidth="3" 
-                    BackgroundColor="White"
-                    Clicked="OnClickActGratuite"/>
+                    BackgroundColor="White"/>
 
             <Button Text="Payante" 
                     TextColor="Black" 

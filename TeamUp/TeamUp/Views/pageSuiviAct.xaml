@@ -4,9 +4,13 @@
              x:Class="TeamUp.Views.pageSuiviAct">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="T'es trop sportif poto"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="listViewActivite">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding id}" Detail="{Binding titre}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -143,7 +143,8 @@
                             BorderColor="Black" 
                             BorderWidth="3" 
                             FontSize="Micro"
-                            BackgroundColor="White"/>
+                            BackgroundColor="White"
+                            Clicked="OnClickMdpOublie" />
 
                     <Button Clicked="OnClickDeconnexion" 
                             Text="Se déconnecter" 

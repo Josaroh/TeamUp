@@ -42,7 +42,7 @@ namespace TeamUp.Views
                 })
             });
         }
-        
+
         //action de log
         //événement du clic sur le bouton OnClickSeConnecter
         private async void OnClickSeConnecter(object sender, EventArgs e)
@@ -71,14 +71,14 @@ namespace TeamUp.Views
 
             bool existe = false;
 
-            foreach(Utilisateur user in utilisateur)
+            foreach (Utilisateur user in utilisateur)
             {
                 existe = true;
                 App.utilisateur = user;
                 Console.WriteLine("La liste est " + user.identifiant);
             }
 
-            if(existe == true)
+            if (existe == true && motDePasse == App.utilisateur.mot_de_passe)
             {
                 /*var res = await Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromSeconds(10)));
                 if (res != null)
@@ -89,11 +89,11 @@ namespace TeamUp.Views
             }
             else
             {
-                DisplayAlert("Identifiant erroné", "Veuillez saisir à nouveau votre identifiant", "Ok");
+                DisplayAlert("Identifiant ou mot de passe erroné", "Veuillez saisir à nouveau votre identifiant et votre mot de passe", "Ok");
                 return;
             }
 
-            
+
         }
 
         //événement quand l'utilisateur a entré son mot de passe

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TeamUp.Views.pageChargement">
+             x:Class="TeamUp.Views.pageChargement"
+             BackgroundColor="#24b6ff">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Ca touuuurne!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="CenterAndExpand" Padding="0, 220, 0, 0">
+            <Image Source="logo_couleur_teamup_FINAL.jpg" 
+                       WidthRequest="200"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

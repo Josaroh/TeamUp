@@ -16,5 +16,12 @@ namespace TeamUp.Views
         {
             InitializeComponent();
         }
+
+        protected override async void OnAppearing()
+        {
+            Console.WriteLine("ON STAAAAAAAAAAAAAAAAAAAAAAAAAAART");
+            await Task.Delay(1500);
+            await Navigation.PushAsync(new pageConnexion());
+        }
     }
 }

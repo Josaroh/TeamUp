@@ -34,7 +34,6 @@ namespace TeamUp.Views
             picker.ItemsSource = ListeSports;
         }
 
-
         protected async override void OnAppearing()
         {
 
@@ -81,6 +80,13 @@ namespace TeamUp.Views
             //mettre condition mot de passe et identifiant
 
             await Navigation.PushAsync(new pageConnexion()); // renvoie sur la page d'accueil
+        }
+
+        private async void OnClickMdpOublie(object sender, EventArgs e)
+        {
+            //mettre condition mot de passe et identifiant
+
+            await Navigation.PushAsync(new pageMotDePasseOublie()); // renvoie sur la page d'accueil
         }
     }
 }

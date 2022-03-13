@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeamUp.Views.pageMotDePasseOublie">
+
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Changer mot de passe"
+                   TextColor="White" 
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="Saisissez votre adresse mail" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Entry x:Name="Mail"
+                           IsPassword="False" 
+                           ClearButtonVisibility="WhileEditing" 
+                           ReturnType="Go" 
+                           WidthRequest="200"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="Nous allons vous envoyer un mail pour réinitialiser votre mot de passe" FontSize="Medium"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

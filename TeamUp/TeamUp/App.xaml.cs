@@ -4,6 +4,7 @@ using TeamUp.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using TeamUp.Models;
+using System.Threading.Tasks;
 
 [assembly: ExportFont("Rubik-Regular.ttf", Alias = "rubik")]
 [assembly: ExportFont("Rubik-Bold.ttf", Alias = "rubikB")]
@@ -19,7 +20,7 @@ namespace TeamUp
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage(new pageConnexion())
+            MainPage = new NavigationPage(new pageChargement())
             {
                 BarBackgroundColor = Color.FromHex("#24b6ff")
             };
@@ -27,6 +28,7 @@ namespace TeamUp
 
         protected override void OnStart()
         {
+            
         }
 
         protected override void OnSleep()

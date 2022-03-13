@@ -22,9 +22,9 @@ namespace TeamUp.Views
 
         }
 
-        private async void OnClickActGratuite(object sender, EventArgs e)
+        /*private async void OnClickActGratuite(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new pageConsultationActGratuite()); // renvoie sur la page d'accueil
-        }
+        }*/
     }
 }

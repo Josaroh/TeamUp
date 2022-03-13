@@ -11,7 +11,7 @@ namespace TeamUp.Models
         public string titre { get; set; }
         public string date { get; set; }
         public string heure_debut { get; set; }
-        public string duree { get; set; }
+        public string heure_fin { get; set; }
         public string lieu { get; set; }
         public string niveau { get; set; }
         public string nbr_participant { get; set; }

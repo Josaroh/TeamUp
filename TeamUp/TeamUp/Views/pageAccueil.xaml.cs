@@ -37,14 +37,14 @@ namespace TeamUp.Views
             pickerLieu.ItemsSource = ListeLieu;
         }
 
-        protected async override void OnAppearing() 
+        protected async override void OnAppearing()
         {
             var content = await client.GetStringAsync(url);
             var activite = JsonConvert.DeserializeObject<List<Activite>>(content);
 
             foreach (Activite act in activite)
             {
-                if(act.titre == "")
+                if (act.titre == "")
                 {
                     Console.WriteLine("BRUUUUUUUUH");
                 }
@@ -72,11 +72,11 @@ namespace TeamUp.Views
 
             //var res = await Geolocation.GetLastKnownLocationAsync();
             var res = await Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromSeconds(10)));
-            
+
             if (res != null)
             {
                 Position position = new Position(res.Latitude, res.Longitude);
-                
+
                 Console.WriteLine($"Latitude: {res.Latitude}, Longitude: {res.Longitude}");
             }
         }
@@ -87,6 +87,9 @@ namespace TeamUp.Views
 
             Console.WriteLine("WOAAAAAAAAAAA TROP BIEN CA MARCHE");
             //await Navigation.PushAsync(new pageProfil()); // renvoie sur la page d'accueil
+
+            string actId = ((Pin)sender).ClassId;
+            await Navigation.PushAsync(new pageConsultationActGratuite(actId));
         }
 
         private async void OnClickProfil(object sender, EventArgs e)
@@ -94,13 +97,6 @@ namespace TeamUp.Views
             //mettre condition mot de passe et identifiant
 
             await Navigation.PushAsync(new pageProfil()); // renvoie sur la page d'accueil
-        }
-
-        private async void OnClickActGratuite(object sender, EventArgs e)
-        {
-            //mettre condition mot de passe et identifiant
-
-            await Navigation.PushAsync(new pageConsultationActGratuite()); // renvoie sur la page d'accueil
         }
 
         private async void OnClickActPayante(object sender, EventArgs e)
