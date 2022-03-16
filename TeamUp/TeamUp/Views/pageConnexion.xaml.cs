@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Net.Http;
-using System.Collections.ObjectModel;
 using TeamUp.Models;
 using Newtonsoft.Json;
-using Xamarin.Essentials;
 
 namespace TeamUp.Views
 {
@@ -33,12 +27,13 @@ namespace TeamUp.Views
         void lblClickFucn()
         {
 
-            lblclick.GestureRecognizers.Add(new TapGestureRecognizer()// "Le clique"
+            lblclick.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                //commande asynchrone : elle ne se lance pas dès que la page se génére
+                //commande asynchrone : elle ne se lance pas dès 
+                // que la page se génére
                 Command = new Command(async () =>
                 {
-                    await Navigation.PushAsync(new pageInscription()); // attend le clique, si le lblclick est cliqué renvoie sur la page d'inscription
+                    await Navigation.PushAsync(new pageInscription()); 
                 })
             });
         }

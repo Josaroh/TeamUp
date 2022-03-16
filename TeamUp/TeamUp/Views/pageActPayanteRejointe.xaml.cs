@@ -13,7 +13,7 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageActPayanteRejointe : ContentPage
     {
-        public pageActPayanteRejointe()
+        public pageActPayanteRejointe(string id)
         {
             InitializeComponent();
             TextCell textCell = new TextCell();

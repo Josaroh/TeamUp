@@ -61,7 +61,7 @@ namespace TeamUp.Views
             }
 
             var heureDeb = Horaires.Text.Substring(0, 5);
-            var duree = Horaires.Text.Substring(8, 5);
+            var heureFin = Horaires.Text.Substring(8, 5);
             var niveau = Picker.SelectedItem.ToString();
 
             // création de l'activité et ajout dans la BD
@@ -76,7 +76,7 @@ namespace TeamUp.Views
                     { "titre", nom },
                     { "date", dateAct },
                     { "heure_debut", heureDeb },
-                    { "duree", duree },
+                    { "heure_fin", heureFin },
                     { "lieu", lieu },
                     { "tarif", tarif },
                     { "niveau", niveau },

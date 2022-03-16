@@ -30,13 +30,13 @@
         <StackLayout>
             <StackLayout Orientation="Horizontal" Padding="10,20,10,10">
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <Label Text="13 Avr" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="Date" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                     <Label Text="-" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <Label Text="Match de football" TextColor="Black" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="Nom" TextColor="Black" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
                 </StackLayout>
             </StackLayout>
 
@@ -77,38 +77,36 @@
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                     <StackLayout Orientation="Vertical" Padding="-25,37,0,30">
                         <Label Text="Lieu de rendez-vous" TextColor="Black"  FontFamily="rubik"/>
-                        <Label Text="Stade Saint Jean ANGLET" TextColor="Black"  FontFamily="rubikI"/>
+                        <Label x:Name="Lieu" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
                         <Label Text="Horaires" TextColor="Black"  FontFamily="rubik"/>
-                        <Label Text="14h00 - 15h30" TextColor="Black"  FontFamily="rubikI"/>
+                        <Label x:Name="Horaires" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
                         <Label Text="Tarif" TextColor="Black"  FontFamily="rubik"/>
-                        <Label Text="10€" TextColor="Black"  FontFamily="rubikI"/>
+                        <Label x:Name="Tarif" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
                         <Label Text="Niveau" TextColor="Black"  FontFamily="rubik"/>
-                        <Label Text="Amateur" TextColor="Black"  FontFamily="rubikI"/>
+                        <Label x:Name="Niveau" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
 
-            <Label Padding="15,0,0,0" Text="Teammates inscrits (3/4)" TextColor="Black"  FontFamily="rubik"/>
+            <Label Padding="15,0,0,0" x:Name="NbTeam" Text="Teammates inscrits" TextColor="Black"  FontFamily="rubik"/>
 
-            <TableView Intent="Data">
+            <TableView  x:Name="LstTeam" Intent="Data">
                 <TableRoot>
-                    <TableSection>
-                        <TextCell Text="LuluChacha" TextColor="Black"/>
-                        <TextCell Text="HugoLeBeau" TextColor="Black"/>
-                        <TextCell Text="TommyPrincesse" TextColor="Black"/>
+                    <TableSection x:Name="LstTeammates">
                     </TableSection>
                 </TableRoot>
             </TableView>
 
 
             <StackLayout Padding="10,10,10,10">
-                <Button Text="S'inscrire"
+                <Button x:Name="btn_inscr"
+                        Text="S'inscrire"
                         HorizontalOptions="End"
                         TextColor="Black" 
                         BorderColor="Black" 

@@ -32,7 +32,7 @@ namespace TeamUp.Views
         {
             //mettre condition mot de passe et identifiant
 
-            await Navigation.PushAsync(new pageConsultationActPayante()); // renvoie sur la page d'accueil
+            //await Navigation.PushAsync(new pageConsultationActPayante()); // renvoie sur la page d'accueil
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TeamUp.Models
 {
-    class Teammate
+    public class Teammate
     {
         public string activite_id { get; set; }
         public string utilisateur_id { get; set; }

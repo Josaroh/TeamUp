@@ -11,20 +11,7 @@
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Secondary"
-                     Priority="0" 
-                     Text="Modifier"
-                     Clicked="OnClickModifActGratuite"/>
-        <ToolbarItem Order="Secondary"
-                     Priority="0" 
-                     Text="Supprimer"
-                     Clicked="OnClickSupprActGratuite"/>
-        <ToolbarItem Order="Secondary"
-                     Priority="0" 
-                     Text="Supprimer Teammates"
-                     Clicked="OnClickSupprTeammates"/>
-    </ContentPage.ToolbarItems>
+   
 
     <ContentPage.Content>
         <StackLayout>
@@ -84,15 +71,16 @@
                 </StackLayout>
             </StackLayout>
 
-            <Label Padding="15,0,0,0" x:Name="NbTeam" Text="Teammates inscrits" TextColor="Black"  FontFamily="rubik"/>
-
-            <TableView x:Name="LstTeam" Intent="Data">
-                <TableRoot>
-                    <TableSection x:Name="LstTeammates">
-                    </TableSection>
-                </TableRoot>
-            </TableView>
-
+            <Label Padding="15,0,0,0" x:Name="NbTeam" TextColor="Black"  FontFamily="rubik"/>
+            <RefreshView >
+                <TableView x:Name="LstTeam" Intent="Data">
+                    <TableRoot>
+                        <TableSection x:Name="LstTeammates">
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+            </RefreshView>
+            
 
             <StackLayout Padding="10,10,10,10">
                 <Button x:Name="btn_inscr"

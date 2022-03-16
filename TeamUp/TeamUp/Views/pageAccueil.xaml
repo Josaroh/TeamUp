@@ -61,25 +61,7 @@
                     </maps:MapSpan>
                 </x:Arguments>
             </maps:Map>
-            <StackLayout Orientation="Horizontal">
-            <Button Text="Gratuite" 
-                    TextColor="Black" 
-                    WidthRequest="175" 
-                    HorizontalOptions="End" 
-                    BorderColor="Black"  
-                    BorderWidth="3" 
-                    BackgroundColor="White"/>
 
-            <Button Text="Payante" 
-                    TextColor="Black" 
-                    WidthRequest="175" 
-                    HorizontalOptions="End" 
-                    BorderColor="Black" 
-                    BorderWidth="3" 
-                    BackgroundColor="White"
-                    Clicked="OnClickActPayante"/>
-            </StackLayout>
-            
             <StackLayout Orientation="Horizontal"
                          BackgroundColor="#24b6ff"
                          Spacing="30">

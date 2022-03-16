@@ -22,6 +22,8 @@ namespace TeamUp.Views
         {
             InitializeComponent();
 
+            
+
             var ListeSport = new List<string>();
             ListeSport.Add("Tennis");
             ListeSport.Add("Surf");
@@ -79,17 +81,63 @@ namespace TeamUp.Views
 
                 Console.WriteLine($"Latitude: {res.Latitude}, Longitude: {res.Longitude}");
             }
+
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(res.Latitude, res.Longitude), new Distance(2000)));
+            //map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(43.4775389, -1.5083868), new Distance(2000)));
         }
 
         private async void OnClickPin(object sender, EventArgs e)
         {
-            //mettre condition mot de passe et identifiant
-
-            Console.WriteLine("WOAAAAAAAAAAA TROP BIEN CA MARCHE");
-            //await Navigation.PushAsync(new pageProfil()); // renvoie sur la page d'accueil
-
             string actId = ((Pin)sender).ClassId;
-            await Navigation.PushAsync(new pageConsultationActGratuite(actId));
+
+            //condition act gratuite
+            bool inscrit = false;
+            bool estPayant = false;
+            string url = "http://gestionlocation.ddns.net/activite.php?id=" + actId;
+            var content = await client.GetStringAsync(url);
+            var activite = JsonConvert.DeserializeObject<List<Activite>>(content);
+
+            foreach(var act in activite)
+            {
+                if (act.coute_id != null)
+                {
+                    estPayant = true;
+                }
+                if(int.Parse(act.a_pour_team_leader_id) == int.Parse(App.utilisateur.id))
+                {
+                    inscrit = true;
+                }
+            }
+
+            url = "http://gestionlocation.ddns.net/teammates.php?idActivite=" + actId;
+            content = await client.GetStringAsync(url);
+            var teammates = JsonConvert.DeserializeObject<List<Teammate>>(content);
+
+            foreach (var mates in teammates)
+            {
+                if (int.Parse(mates.utilisateur_id) == int.Parse(App.utilisateur.id))
+                {
+                    inscrit = true;
+                }
+            }
+
+            if (inscrit == true && estPayant == false)
+            {
+                await Navigation.PushAsync(new pageActGratuiteRejointe(actId));
+            }
+            else if (inscrit == false && estPayant == false)
+            {
+                await Navigation.PushAsync(new pageConsultationActGratuite(actId));
+            }
+
+            else if (inscrit == false && estPayant == true)
+            {
+                await Navigation.PushAsync(new pageActPayanteRejointe(actId));
+            }
+            else
+            {
+                await Navigation.PushAsync(new pageConsultationActPayante(actId));
+            }
         }
 
         private async void OnClickProfil(object sender, EventArgs e)
@@ -97,13 +145,6 @@ namespace TeamUp.Views
             //mettre condition mot de passe et identifiant
 
             await Navigation.PushAsync(new pageProfil()); // renvoie sur la page d'accueil
-        }
-
-        private async void OnClickActPayante(object sender, EventArgs e)
-        {
-            //mettre condition mot de passe et identifiant
-
-            await Navigation.PushAsync(new pageConsultationActPayante()); // renvoie sur la page d'accueil
         }
 
         private async void OnClickCreationAct(object sender, EventArgs e)
