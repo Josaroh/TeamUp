@@ -25,7 +25,8 @@
                     <Label Text="-" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <Entry IsPassword="False" 
+                    <Entry x:Name="Nom"
+                           IsPassword="False" 
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"
@@ -80,7 +81,9 @@
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                     <StackLayout Orientation="Vertical" Padding="-25,37,0,20">
                         <Label Text="Lieu de rendez-vous *" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry IsPassword="False" 
+                        <Entry 
+                           x:Name="Lieu"
+                           IsPassword="False" 
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"
@@ -90,7 +93,9 @@
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
                         <Label Text="Horaires *" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry IsPassword="False" 
+                        <Entry 
+                           x:Name="Horaire"
+                           IsPassword="False" 
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"
@@ -100,7 +105,9 @@
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
                         <Label Text="Tarif" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry IsPassword="False" 
+                        <Entry 
+                           x:Name="Tarif"
+                           IsPassword="False" 
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"
@@ -110,7 +117,7 @@
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
                         <Label Text="Niveau *" TextColor="Black"  FontFamily="rubik"/>
-                        <Picker x:Name="picker"
+                        <Picker x:Name="Picker"
                                 Title="Amateur"
                                 FontSize="Small"
                                 TitleColor="LightGray">
@@ -118,7 +125,9 @@
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,0">
                         <Label Text="Nombre de Teammates *" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry IsPassword="False" 
+                        <Entry 
+                               x:Name="nbMax"
+                               IsPassword="False" 
                                ClearButtonVisibility="WhileEditing" 
                                ReturnType="Go" 
                                WidthRequest="200"

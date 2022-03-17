@@ -18,6 +18,7 @@ namespace TeamUp.Views
         private string urlAct = "http://gestionlocation.ddns.net/activite.php?id=";
         private string urlTeam = "http://gestionlocation.ddns.net/teammates.php?idActivite=";
         public string idPage;
+        private bool isTeamLeader = false;
 
         private HttpClient client = new HttpClient();
 
@@ -38,6 +39,7 @@ namespace TeamUp.Views
         protected override void OnDisappearing()
         {
             LstTeammates.Clear();
+            cptTeam = 0;
         }
 
         protected async override void OnAppearing()
@@ -54,10 +56,19 @@ namespace TeamUp.Views
                 Niveau.Text = act.niveau;
                 nbMaxTeam = act.nbr_participant;
 
-                
+                if (act.a_pour_team_leader_id == App.utilisateur.id)
+                {
+                    isTeamLeader = true;
+                }
+                else
+                {
+                    Item1.IsEnabled = false;
+                    Item2.IsEnabled = false;
+                    Item3.IsEnabled = false;
+                }
 
-              
-                    var urlTL = "http://gestionlocation.ddns.net/utilisateur.php?id=";
+
+                var urlTL = "http://gestionlocation.ddns.net/utilisateur.php?id=";
                     urlTL += act.a_pour_team_leader_id;
 
                     var contentTL = await client.GetStringAsync(urlTL);
@@ -96,12 +107,34 @@ namespace TeamUp.Views
 
         private async void OnClickModifActGratuite(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new pageModifActGratuite());
+            await Navigation.PushAsync(new pageModifActGratuite(idPage));
         }
 
         private async void OnClickSupprActGratuite(object sender, EventArgs e)
         {
-            await DisplayAlert("Confirmation de la suppression", "Souhaitez-vous supprimer cette activité ?", "Non", "Oui");
+            
+            bool answer = await DisplayAlert("Confirmation de la suppression", "Souhaitez-vous supprimer cette activité ?", "Non", "Oui");
+            string urlSuppr = "";
+
+            if (!answer)
+            {
+
+                await client.DeleteAsync(urlAct);
+
+                var contentTeam = await client.GetStringAsync(urlTeam);
+                var teammate = JsonConvert.DeserializeObject<List<Teammate>>(contentTeam);
+
+
+
+                foreach (Teammate team in teammate)
+                {
+                    urlSuppr += urlTeam + "&idUtilisateur=" + team.utilisateur_id;
+                    await client.DeleteAsync(urlSuppr);
+                }
+
+
+                _ = Navigation.PopAsync();
+            }
         }
 
         private async void OnClickSupprTeammates(object sender, EventArgs e)
@@ -111,12 +144,31 @@ namespace TeamUp.Views
 
         private async void OnClickDesinscriptionActGratuite(object sender, EventArgs e)
         {
-            bool answer = await DisplayAlert("Confirmation de la désinscription", "Souhaitez-vous quitter cette activité ?", "Non", "Oui");
 
-            if (!answer)
+            if (isTeamLeader == true)
             {
-                _ = Navigation.PopAsync();
+                await DisplayAlert("Vous êtes Team Leader !","Vous ne pouvez pas vous désinscrire de votre propre activité", "Ok");
+                btn.IsEnabled = false;
             }
+            else
+            {
+                bool answer = await DisplayAlert("Confirmation de la désinscription", "Souhaitez-vous quitter cette activité ?", "Non", "Oui");
+
+                string urlSuppr = "";
+
+                if (!answer)
+                {
+
+                    urlSuppr += urlTeam + "&idUtilisateur=" + App.utilisateur.id;
+                    await client.DeleteAsync(urlSuppr);
+
+                    _ = Navigation.PopAsync();
+                }
+
+            }
+
+
+            
         }
 
         private async void OnClickMessAccueil(object sender, EventArgs e)

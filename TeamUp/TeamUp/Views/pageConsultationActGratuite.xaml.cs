@@ -25,6 +25,7 @@ namespace TeamUp.Views
         private List<string> listUser = new List<string>();
         private string nbMaxTeam;
         private int cptTeam = 0;
+        private bool isTeamLeader = false;
 
         public pageConsultationActGratuite(string id)
         {
@@ -54,6 +55,11 @@ namespace TeamUp.Views
                 Niveau.Text = act.niveau;
                 nbMaxTeam = act.nbr_participant;
 
+                
+                if(App.utilisateur.id == act.a_pour_team_leader_id)
+                {
+                    isTeamLeader = true;
+                }
                
                     var urlTL = "http://gestionlocation.ddns.net/utilisateur.php?id=";
                     urlTL += act.a_pour_team_leader_id;
@@ -95,15 +101,32 @@ namespace TeamUp.Views
 
         private async void OnClickModifActGratuite(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new pageModifActGratuite());
+            await Navigation.PushAsync(new pageModifActGratuite(idPage));
         }
 
         private async void OnClickSupprActGratuite(object sender, EventArgs e)
         {
+
             bool answer = await DisplayAlert("Confirmation de la suppression", "Souhaitez-vous supprimer cette activité ?", "Non", "Oui");
+            string urlSuppr="";
 
             if (!answer)
             {
+
+                await clientAct.DeleteAsync(urlAct);
+
+                var contentTeam = await clientTeam.GetStringAsync(urlTeam);
+                var teammate = JsonConvert.DeserializeObject<List<Teammate>>(contentTeam);
+
+              
+
+                foreach (Teammate team in teammate)
+                {
+                    urlSuppr += urlTeam + "&idUtilisateur=" + team.utilisateur_id;
+                    await clientAct.DeleteAsync(urlSuppr);
+                }
+
+
                 _ = Navigation.PopAsync();
             }
         }

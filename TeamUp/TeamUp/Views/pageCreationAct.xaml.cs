@@ -70,7 +70,9 @@ namespace TeamUp.Views
             string contentType = "application/json";
             var actTerminee = "false";
 
-            JObject json = new JObject
+            if (string.IsNullOrEmpty(tarif))
+            {
+                JObject json = new JObject
                 {
                     { "a_pour_team_leader_id", App.utilisateur.id },
                     { "titre", nom },
@@ -78,15 +80,33 @@ namespace TeamUp.Views
                     { "heure_debut", heureDeb },
                     { "heure_fin", heureFin },
                     { "lieu", lieu },
-                    { "tarif", tarif },
                     { "niveau", niveau },
                     { "nbr_participant", nbTeam },
                     { "activite_terminee", actTerminee }
                 };
 
-            
-            var content2 = new StringContent(json.ToString(), Encoding.UTF8, contentType);
-            await client.PostAsync(urlAct, content2);
+                var content2 = new StringContent(json.ToString(), Encoding.UTF8, contentType);
+                await client.PostAsync(urlAct, content2);
+            }
+            else
+            {
+                JObject json = new JObject
+                {
+                    { "a_pour_team_leader_id", App.utilisateur.id },
+                    { "titre", nom },
+                    { "date", dateAct },
+                    { "heure_debut", heureDeb },
+                    { "heure_fin", heureFin },
+                    { "lieu", lieu },
+                    { "prix", tarif },
+                    { "niveau", niveau },
+                    { "nbr_participant", nbTeam },
+                    { "activite_terminee", actTerminee }
+                };
+
+                var content2 = new StringContent(json.ToString(), Encoding.UTF8, contentType);
+                await client.PostAsync(urlAct, content2);
+            }
 
             await Navigation.PushAsync(new pageAccueil()); // doit renvoyer sur la page de consultation de l'activité pageActiviteGratuite(id)
         }

@@ -53,14 +53,8 @@ namespace TeamUp.Views
                 Horaires.Text = act.heure_debut + " - " + act.heure_fin;
                 Niveau.Text = act.niveau;
                 nbMaxTeam = act.nbr_participant;
-
-                var urlTarif = "http://gestionlocation.ddns.net/activitePayante.php?id=";
-                urlTarif += act.coute_id;
-
-                var contentActP = await clientAct.GetStringAsync(urlTarif);
-                var activiteP = JsonConvert.DeserializeObject<List<ActivitePayante>>(contentActP);
-                var tarif = activiteP.Find(x => x.id.Contains(act.coute_id));
-                Tarif.Text = tarif.tarif;
+                Tarif.Text = act.prix + "€";
+               
                 
                 var urlTL = "http://gestionlocation.ddns.net/utilisateur.php?id=";
                 urlTL += act.a_pour_team_leader_id;
@@ -97,7 +91,7 @@ namespace TeamUp.Views
 
         private async void OnClickModifActPayante(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new pageModifActPayante());
+            await Navigation.PushAsync(new pageModifActPayante(idPage));
         }
 
         private async void OnClickSupprActPayante(object sender, EventArgs e)
@@ -142,7 +136,7 @@ namespace TeamUp.Views
 
 
 
-                await Navigation.PushAsync(new pageActGratuiteRejointe(this.idPage));
+                await Navigation.PushAsync(new pageActPayanteRejointe(this.idPage));
 
 
             }

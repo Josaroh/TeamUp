@@ -39,6 +39,13 @@ namespace TeamUp.Views
             pickerLieu.ItemsSource = ListeLieu;
         }
 
+
+
+        protected override void OnDisappearing() { 
+            map.Pins.Clear();
+        }
+
+
         protected async override void OnAppearing()
         {
             var content = await client.GetStringAsync(url);
@@ -99,10 +106,12 @@ namespace TeamUp.Views
 
             foreach(var act in activite)
             {
-                if (act.coute_id != null)
+
+                if (act.prix != null)
                 {
                     estPayant = true;
                 }
+
                 if(int.Parse(act.a_pour_team_leader_id) == int.Parse(App.utilisateur.id))
                 {
                     inscrit = true;
@@ -132,11 +141,11 @@ namespace TeamUp.Views
 
             else if (inscrit == false && estPayant == true)
             {
-                await Navigation.PushAsync(new pageActPayanteRejointe(actId));
+                await Navigation.PushAsync(new pageConsultationActPayante(actId));
             }
             else
             {
-                await Navigation.PushAsync(new pageConsultationActPayante(actId));
+                await Navigation.PushAsync(new pageActPayanteRejointe(actId));
             }
         }
 

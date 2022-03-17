@@ -12,15 +12,18 @@
     </NavigationPage.TitleView>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Secondary"
+        <ToolbarItem x:Name="Item1"
+                     Order="Secondary"
                      Priority="0" 
                      Text="Modifier"
                      Clicked="OnClickModifActPayante"/>
-        <ToolbarItem Order="Secondary"
+        <ToolbarItem x:Name="Item2"
+                     Order="Secondary"
                      Priority="0" 
                      Text="Supprimer"
                      Clicked="OnClickSupprActPayante"/>
-        <ToolbarItem Order="Secondary"
+        <ToolbarItem x:Name="Item3"
+                     Order="Secondary"
                      Priority="0" 
                      Text="Supprimer Teammates"
                      Clicked="OnClickSupprTeammates"/>
@@ -30,13 +33,13 @@
         <StackLayout>
             <StackLayout Orientation="Horizontal" Padding="10,20,10,10">
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <Label Text="13 Avr" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="Date" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                     <Label Text="-" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <Label Text="Séance de jogging" TextColor="Black" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="Nom" Text="Séance de jogging" TextColor="Black" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
                 </StackLayout>
             </StackLayout>
 
@@ -69,36 +72,36 @@
                     <StackLayout Orientation="Horizontal" Padding="0,-65,0,5">
                         <Image Source="icon_barre.png" WidthRequest="70"/>
                     </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    </StackLayout>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                     <StackLayout Orientation="Vertical" Padding="-25,37,0,30">
                         <Label Text="Lieu de rendez-vous" TextColor="Black"  FontFamily="rubik"/>
-                        <Label Text="Plage des Sables d'Or ANGLET" TextColor="Black"  FontFamily="rubikI"/>
+                        <Label x:Name="Lieu" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
                         <Label Text="Horaires" TextColor="Black"  FontFamily="rubik"/>
-                        <Label Text="19h00 - 21h00" TextColor="Black"  FontFamily="rubikI"/>
+                        <Label x:Name="Horaires" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
                         <Label Text="Tarif" TextColor="Black"  FontFamily="rubik"/>
-                        <Label Text="10€" TextColor="Black"  FontFamily="rubikI"/>
+                        <Label x:Name="Tarif" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
                         <Label Text="Niveau" TextColor="Black"  FontFamily="rubik"/>
-                        <Label Text="Avancé" TextColor="Black"  FontFamily="rubikI"/>
+                        <Label x:Name="Niveau" TextColor="Black"  FontFamily="rubikI"/>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
 
-            <Label Padding="15,0,0,0" Text="Teammates inscrits (3/4)" TextColor="Black"  FontFamily="rubik"/>
+            <Label Padding="15,0,0,0" x:Name="NbTeam" TextColor="Black"  FontFamily="rubik"/>
 
             <TableView Intent="Data" >
                 <TableRoot>
-                    <TableSection x:Name="Tableau">
-                        <TextCell Text="LuluChacha" TextColor="Black"/>
-                        <TextCell Text="HugoLeBeau" TextColor="Black"/>
-                        <TextCell Text="TommyPrincesse" TextColor="Black"/>
+                    <TableSection x:Name="LstTeammates">
                     </TableSection>
                 </TableRoot>
             </TableView>
@@ -112,7 +115,8 @@
                              Clicked="OnClickMessAccueil"
                              HorizontalOptions="Fill"
                              BackgroundColor="White"/>
-                <Button Text="Se désinscrire"
+                <Button x:Name="btn"
+                        Text="Se désinscrire"
                         TextColor="Black" 
                         BorderColor="Black" 
                         BorderWidth="2" 

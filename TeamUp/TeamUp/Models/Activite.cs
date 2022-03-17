@@ -16,6 +16,6 @@ namespace TeamUp.Models
         public string niveau { get; set; }
         public string nbr_participant { get; set; }
         public string activite_terminee { get; set; }
-        public string coute_id { get; set; }
+        public string prix { get; set; }
     }
 }

@@ -12,15 +12,18 @@
     </NavigationPage.TitleView>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Secondary"
+        <ToolbarItem x:Name="Item1"
+                     Order="Secondary"
                      Priority="0" 
                      Text="Modifier"
                      Clicked="OnClickModifActGratuite"/>
-        <ToolbarItem Order="Secondary"
+        <ToolbarItem x:Name="Item2"
+                     Order="Secondary"
                      Priority="0" 
                      Text="Supprimer"
                      Clicked="OnClickSupprActGratuite"/>
-        <ToolbarItem Order="Secondary"
+        <ToolbarItem x:Name="Item3"
+                     Order="Secondary"
                      Priority="0" 
                      Text="Supprimer Teammates"
                      Clicked="OnClickSupprTeammates"/>
@@ -102,7 +105,8 @@
                              Clicked="OnClickMessAccueil"
                              HorizontalOptions="Fill"
                              BackgroundColor="White"/>
-                <Button Text="Se désinscrire"
+                <Button x:Name="btn"
+                        Text="Se désinscrire"
                         TextColor="Black" 
                         BorderColor="Black" 
                         BorderWidth="2" 

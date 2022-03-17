@@ -11,20 +11,6 @@
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Secondary"
-                     Priority="0" 
-                     Text="Modifier"
-                     Clicked="OnClickModifActPayante"/>
-        <ToolbarItem Order="Secondary"
-                     Priority="0" 
-                     Text="Supprimer"
-                     Clicked="OnClickSupprActPayante"/>
-        <ToolbarItem Order="Secondary"
-                     Priority="0" 
-                     Text="Supprimer Teammates"
-                     Clicked="OnClickSupprTeammates"/>
-    </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout>

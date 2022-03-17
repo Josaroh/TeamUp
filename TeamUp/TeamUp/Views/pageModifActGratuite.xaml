@@ -71,21 +71,25 @@
                 <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                     <StackLayout Orientation="Vertical" Padding="-25,37,0,20">
                         <Label Text="Lieu de rendez-vous *" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry IsPassword="False" 
+                        <Entry 
+                           x:Name="Lieu"
+                           IsPassword="False" 
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"
-                           x:Name="Lieu"
+                          
                            PlaceholderColor="Black"
                            FontSize="Small"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
                         <Label Text="Horaires *" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry IsPassword="False" 
+                        <Entry 
+                           x:Name="Horaire"
+                           IsPassword="False" 
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
                            WidthRequest="200"
-                           x:Name="Horaires"
+                         
                            PlaceholderColor="Black"
                            FontSize="Small"/>
                     </StackLayout>
@@ -103,7 +107,7 @@
                                ClearButtonVisibility="WhileEditing" 
                                ReturnType="Go" 
                                WidthRequest="200"
-                               x:Name="NbTeam"
+                               x:Name="nbMax"
                                PlaceholderColor="Black"
                                FontSize="Small"/>
                     </StackLayout>
@@ -118,7 +122,8 @@
                         BorderColor="Black" 
                         BorderWidth="2" 
                         BackgroundColor="White"
-                        WidthRequest="125"/>
+                        WidthRequest="125"
+                        Clicked="OnClickActGratuite"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
