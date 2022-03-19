@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Net.Http;
-using System.Collections.ObjectModel;
-using TeamUp.Models;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 
 namespace TeamUp.Views
 {
@@ -16,9 +12,6 @@ namespace TeamUp.Views
     public partial class pageCreationAct : ContentPage
     {
         private string urlAct = "http://gestionlocation.ddns.net/activite.php";
-        //private string urlAct = "http://10.3.229.19/Api/activites";
-        //private string urlAct = "http://192.168.1.38/Api/activites";
-        
         private HttpClient client = new HttpClient();
         public pageCreationAct()
         {
@@ -63,10 +56,6 @@ namespace TeamUp.Views
             var heureDeb = Horaires.Text.Substring(0, 5);
             var heureFin = Horaires.Text.Substring(8, 5);
             var niveau = Picker.SelectedItem.ToString();
-
-            // création de l'activité et ajout dans la BD
-            // ne push pas dans la BD
-
             string contentType = "application/json";
             var actTerminee = "false";
 
@@ -107,7 +96,6 @@ namespace TeamUp.Views
                 var content2 = new StringContent(json.ToString(), Encoding.UTF8, contentType);
                 await client.PostAsync(urlAct, content2);
             }
-
             await Navigation.PushAsync(new pageAccueil()); // doit renvoyer sur la page de consultation de l'activité pageActiviteGratuite(id)
         }
     }

@@ -31,73 +31,139 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal" Padding="10,20,10,10">
-                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <Label x:Name="Date" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+            <StackLayout Orientation="Horizontal" 
+                         Padding="10,20,10,10">
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="CenterAndExpand">
+                    <Label x:Name="Date" 
+                           FontSize="Title"  
+                           FontFamily="rubik" 
+                           HorizontalTextAlignment="Center"/>
                 </StackLayout>
-                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <Label Text="-" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+                
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="CenterAndExpand">
+                    <Label Text="-" 
+                           FontSize="Title" 
+                           FontFamily="rubik" 
+                           HorizontalTextAlignment="Center"/>
                 </StackLayout>
-                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <Label x:Name="Nom" Text="Séance de jogging" TextColor="Black" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
-                </StackLayout>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal" Padding="45,10,10,20">
-                <StackLayout Orientation="Vertical">
-                    <StackLayout Orientation="Horizontal" Padding="0,40,0,30">
-                        <Image Source="icon_ping.jpg" WidthRequest="40"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,7,0,30">
-                        <Image Source="icon_timer.jpg" WidthRequest="35"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,5,0,30">
-                        <Image Source="icon_moula.jpg" WidthRequest="40"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,5,0,30">
-                        <Image Source="icon_croissance.jpg" WidthRequest="45"/>
-                    </StackLayout>
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical">
-                    <StackLayout Orientation="Horizontal" Padding="0,25,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,-65,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
-                    </StackLayout>
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <StackLayout Orientation="Vertical" Padding="-25,37,0,30">
-                        <Label Text="Lieu de rendez-vous" TextColor="Black"  FontFamily="rubik"/>
-                        <Label x:Name="Lieu" TextColor="Black"  FontFamily="rubikI"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
-                        <Label Text="Horaires" TextColor="Black"  FontFamily="rubik"/>
-                        <Label x:Name="Horaires" TextColor="Black"  FontFamily="rubikI"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
-                        <Label Text="Tarif" TextColor="Black"  FontFamily="rubik"/>
-                        <Label x:Name="Tarif" TextColor="Black"  FontFamily="rubikI"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical" Padding="-25,0,0,30">
-                        <Label Text="Niveau" TextColor="Black"  FontFamily="rubik"/>
-                        <Label x:Name="Niveau" TextColor="Black"  FontFamily="rubikI"/>
-                    </StackLayout>
+                
+                <StackLayout Orientation="Vertical"
+                             HorizontalOptions="CenterAndExpand">
+                    <Label x:Name="Nom" 
+                           TextColor="Black" 
+                           FontSize="Title"  
+                           FontFamily="rubik" 
+                           HorizontalTextAlignment="Center"/>
                 </StackLayout>
             </StackLayout>
 
-            <Label Padding="15,0,0,0" x:Name="NbTeam" TextColor="Black"  FontFamily="rubik"/>
+            <StackLayout Orientation="Horizontal" 
+                         Padding="45,10,10,20">
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal"
+                                 Padding="0,40,0,30">
+                        <Image Source="icon_ping.jpg" 
+                               WidthRequest="40"/>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,7,0,30">
+                        <Image Source="icon_timer.jpg"
+                               WidthRequest="35"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,5,0,30">
+                        <Image Source="icon_moula.jpg"
+                               WidthRequest="40"/>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,5,0,30">
+                        <Image Source="icon_croissance.jpg" 
+                               WidthRequest="45"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal"
+                                 Padding="0,25,0,5">
+                        <Image Source="icon_barre.png" 
+                               WidthRequest="70"/>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" 
+                               WidthRequest="70"/>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal"
+                                 Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png"
+                               WidthRequest="70"/>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,-65,0,5">
+                        <Image Source="icon_barre.png" 
+                               WidthRequest="70"/>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png"
+                               WidthRequest="70"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Vertical" 
+                                 Padding="-25,37,0,30">
+                        <Label Text="Lieu de rendez-vous" 
+                               TextColor="Black"  
+                               FontFamily="rubik"/>
+                        <Label x:Name="Lieu"
+                               TextColor="Black"
+                               FontFamily="rubikI"/>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Vertical" 
+                                 Padding="-25,0,0,30">
+                        <Label Text="Horaires" 
+                               TextColor="Black" 
+                               FontFamily="rubik"/>
+                        <Label x:Name="Horaires" 
+                               TextColor="Black"  
+                               FontFamily="rubikI"/>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Vertical" 
+                                 Padding="-25,0,0,30">
+                        <Label Text="Tarif" TextColor="Black"  
+                               FontFamily="rubik"/>
+                        <Label x:Name="Tarif" TextColor="Black" 
+                               FontFamily="rubikI"/>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Vertical" 
+                                 Padding="-25,0,0,30">
+                        <Label Text="Niveau" 
+                               TextColor="Black"  
+                               FontFamily="rubik"/>
+                        <Label x:Name="Niveau" 
+                               TextColor="Black"  
+                               FontFamily="rubikI"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+            <Label Padding="15,0,0,0" 
+                   x:Name="NbTeam" 
+                   TextColor="Black"  
+                   FontFamily="rubik"/>
 
             <TableView Intent="Data" >
                 <TableRoot>
@@ -108,8 +174,9 @@
 
 
             <FlexLayout Direction="Row"
-            AlignItems="Center"
-            JustifyContent="SpaceEvenly" Margin="0,0,0,50">
+                        AlignItems="Center"
+                        JustifyContent="SpaceEvenly" 
+                        Margin="0,0,0,50"> 
                 <ImageButton Source="convo_noir.png"
                              HeightRequest="60"
                              Clicked="OnClickMessAccueil"
@@ -123,8 +190,7 @@
                         BackgroundColor="White"
                         WidthRequest="125"
                         HorizontalOptions="Fill"
-                        Clicked="OnClickDesinscriptionActPayante"
-                        />
+                        Clicked="OnClickDesinscriptionActPayante"/>
             </FlexLayout>
 
 

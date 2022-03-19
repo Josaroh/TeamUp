@@ -17,12 +17,8 @@ namespace TeamUp.Views
         private string urlTeam = "http://gestionlocation.ddns.net/teammates.php?idActivite=";
         private string urlTeammates = "http://gestionlocation.ddns.net/teammates.php";
         public string idPage;
-
         private HttpClient clientAct = new HttpClient();
         private HttpClient clientTeam = new HttpClient();
-        private HttpClient clientUser = new HttpClient();
-
-        private List<string> listUser = new List<string>();
         private string nbMaxTeam;
         private int cptTeam = 0;
 
@@ -54,11 +50,8 @@ namespace TeamUp.Views
                 Niveau.Text = act.niveau;
                 nbMaxTeam = act.nbr_participant;
                 Tarif.Text = act.prix + "€";
-               
-                
                 var urlTL = "http://gestionlocation.ddns.net/utilisateur.php?id=";
                 urlTL += act.a_pour_team_leader_id;
-
                 var contentTL = await clientTeam.GetStringAsync(urlTL);
                 var teamLeader = JsonConvert.DeserializeObject<List<Utilisateur>>(contentTL);
                 var teamL = teamLeader.Find(x => x.id.Contains(act.a_pour_team_leader_id));
@@ -66,17 +59,13 @@ namespace TeamUp.Views
                 cptTeam++;
             }
 
-           
-
             var contentTeam = await clientTeam.GetStringAsync(urlTeam);
             var teammate = JsonConvert.DeserializeObject<List<Teammate>>(contentTeam);
 
             foreach (Teammate team in teammate)
             {
                 var urlUser = "http://gestionlocation.ddns.net/utilisateur.php?id=";
-
                 urlUser += team.utilisateur_id;
-
                 var contentUser = await clientTeam.GetStringAsync(urlUser);
                 var utilisateur = JsonConvert.DeserializeObject<List<Utilisateur>>(contentUser);
                 var user = utilisateur.Find(x => x.id.Contains(team.utilisateur_id));
@@ -86,7 +75,6 @@ namespace TeamUp.Views
 
             string teamInscrits = "Teammates inscrits " + cptTeam.ToString() + "/" + nbMaxTeam;
             NbTeam.Text = teamInscrits;
-
         }
 
         private async void OnClickModifActPayante(object sender, EventArgs e)
@@ -106,7 +94,7 @@ namespace TeamUp.Views
 
         private async void OnClickSupprTeammates(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new pageSupprTeammates());
+            await Navigation.PushAsync(new pageSupprTeammates(idPage));
         }
 
         private async void OnClickInscriptionActPayante(object sender, EventArgs e)
@@ -118,27 +106,16 @@ namespace TeamUp.Views
             }
             else
             {
-
-                Console.WriteLine("HEEEEEEEEEEEEEEEEEEEEEEE");
-
                 string contentType = "application/json";
-
-
                 JObject json = new JObject
                 {
                     { "activite_id", idPage },
                     { "utilisateur_id", App.utilisateur.id }
                 };
 
-
                 var content2 = new StringContent(json.ToString(), Encoding.UTF8, contentType);
                 await clientTeam.PostAsync(urlTeammates, content2);
-
-
-
                 await Navigation.PushAsync(new pageActPayanteRejointe(this.idPage));
-
-
             }
         }
     }

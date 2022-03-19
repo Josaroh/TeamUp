@@ -3,30 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TeamUp.Views.PageChangementDeMotDePasse">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20,20,20,20">
             <Label Text="Changement de mot de passe" 
                    FontFamily="rubikB"
-                   FontSize="30" 
-                   Padding="30,30,30,10" 
+                   FontSize="30"
                    HorizontalTextAlignment="Center"
-                   TextColor="Black"/>
+                   TextColor="Black"
+                   Padding="0,0,0,20"/>
             <Label Text="Nouveau mot de passe" 
-                   FontSize="16" 
-                   Padding="30,40,10,0" 
+                   FontSize="16"
                    FontFamily="rubikB"
                    TextColor="Black"/>
 
             <!-- Saisie de l'identifiant ou de l'adresse mail -->
-            <StackLayout Padding="26,0,20,0">
+            <StackLayout>
                 <Entry x:Name="newMotDePasse"
                        IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
                        ReturnType="Go"/>
             </StackLayout>
 
-
-            <StackLayout Orientation="Horizontal" 
-                         Padding="30,0,22,0">
+            <StackLayout Orientation="Horizontal">
                 <Label Text="Confirmation de mot de passe" 
                        FontSize="16" 
                        FontFamily="rubikB"
@@ -34,7 +31,7 @@
             </StackLayout>
 
             <!-- Saisie du mot de passe -->
-            <StackLayout Padding="26,0,20,0">
+            <StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Entry x:Name="ConfiMotDePasse" 
                            WidthRequest="347"/>
@@ -42,13 +39,13 @@
             </StackLayout>
 
             <Button Text="Enregistrer" 
-                            TextColor="Black" 
-                            WidthRequest="150" 
-                            HorizontalOptions="Start" 
-                            BorderColor="Black" 
-                            BorderWidth="3" 
-                            FontSize="Micro"
-                            BackgroundColor="White"/>
+                    TextColor="Black" 
+                    WidthRequest="150" 
+                    HorizontalOptions="Start" 
+                    BorderColor="Black" 
+                    BorderWidth="3" 
+                    FontSize="Micro"
+                    BackgroundColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

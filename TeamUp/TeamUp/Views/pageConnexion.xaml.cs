@@ -17,20 +17,13 @@ namespace TeamUp.Views
         {
             InitializeComponent();
             MotDePasse.IsPassword = true;
-            //permet d'ajouter l'événement du clique sur un text
             lblClickFucn();
-            var longitude = "";
-            var latitude = "";
         }
 
-        //événement du clique sur lblclick
         void lblClickFucn()
         {
-
             lblclick.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                //commande asynchrone : elle ne se lance pas dès 
-                // que la page se génére
                 Command = new Command(async () =>
                 {
                     await Navigation.PushAsync(new pageInscription()); 
@@ -38,13 +31,9 @@ namespace TeamUp.Views
             });
         }
 
-        //action de log
-        //événement du clic sur le bouton OnClickSeConnecter
         private async void OnClickSeConnecter(object sender, EventArgs e)
         {
             string url = "http://gestionlocation.ddns.net/utilisateur.php?identifiant=";
-            //string url = "http://192.168.1.38/Api/utilisateur.php?identifiant=";
-            //private string url = "http://10.3.229.19/Api/utilisateur.php?identifiant=";
             var identifiant = identifiantOrEmail.Text;
             var motDePasse = MotDePasse.Text;
 
@@ -55,48 +44,30 @@ namespace TeamUp.Views
             }
 
             url += identifiant;
-
             var content = await client.GetStringAsync(url);
             var utilisateur = JsonConvert.DeserializeObject<List<Utilisateur>>(content);
-
-            Console.WriteLine("L'identifiant est " + identifiant);
-            Console.WriteLine("Le mot de passe est " + motDePasse);
-            Console.WriteLine("L'URL est " + url);
-            Console.WriteLine("L'utilisateur est " + utilisateur);
-
             bool existe = false;
 
             foreach (Utilisateur user in utilisateur)
             {
                 existe = true;
                 App.utilisateur = user;
-                Console.WriteLine("La liste est " + user.identifiant);
             }
 
             if (existe == true && motDePasse == App.utilisateur.mot_de_passe)
             {
-                /*var res = await Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromSeconds(10)));
-                if (res != null)
-                {
-                    Console.WriteLine($"Latitude: {res.Latitude}, Longitude: {res.Longitude}");
-                }*/
-                await Navigation.PushAsync(new pageAccueil()); // renvoie sur la page d'accueil
+                await Navigation.PushAsync(new pageAccueil());
             }
             else
             {
                 DisplayAlert("Identifiant ou mot de passe erroné", "Veuillez saisir à nouveau votre identifiant et votre mot de passe", "Ok");
                 return;
             }
-
-
         }
 
-        //événement quand l'utilisateur a entré son mot de passe
         private void Entry_Completed(object sender, EventArgs e)
         {
-            var editor = (Entry)sender; //initialise l'objet editor pour avoir accès aux attributs 
-
-            //motDePasse.Text = "Le mot de passe est : " + editor.Text; // affiche le text
+            var editor = (Entry)sender;
         }
 
         private void ImageButton_Clicked(object sender, EventArgs e)

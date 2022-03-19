@@ -2,10 +2,8 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using TeamUp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -28,20 +26,16 @@ namespace TeamUp.Views
             ListeNiveau.Add("Avancé");
 
             Picker.ItemsSource = ListeNiveau;
-
             urlAct += id;
         }
 
-
         protected async override void OnAppearing()
         {
-
             var contentAct = await client.GetStringAsync(urlAct);
             var activite = JsonConvert.DeserializeObject<List<Activite>>(contentAct);
 
             foreach (Activite act in activite)
             {
-                
                 Nom.Text = act.titre;
                 Lieu.Text = act.lieu;
                 Horaire.Text = act.heure_debut + " - " + act.heure_fin;
@@ -49,7 +43,7 @@ namespace TeamUp.Views
                 Tarif.Text = act.prix;
             }
         }
-            public void OnDateSelected(object sender, EventArgs e)
+        public void OnDateSelected(object sender, EventArgs e)
         {
 
         }
@@ -80,33 +74,26 @@ namespace TeamUp.Views
             var heureDeb = Horaire.Text.Substring(0, 5);
             var heureFin = Horaire.Text.Substring(8, 5);
             var niveau = Picker.SelectedItem.ToString();
-
-            // création de l'activité et ajout dans la BD
-            // ne push pas dans la BD
-
             string contentType = "application/json";
             var actTerminee = "false";
 
-            
-                JObject json = new JObject
-                {
-                    { "a_pour_team_leader_id", App.utilisateur.id },
-                    { "titre", nom },
-                    { "date", dateAct },
-                    { "heure_debut", heureDeb },
-                    { "heure_fin", heureFin },
-                    { "lieu", lieu },
-                    { "prix", tarif },
-                    { "niveau", niveau },
-                    { "nbr_participant", nbTeam },
-                    { "activite_terminee", actTerminee }
-                };
+            JObject json = new JObject
+            {
+                { "a_pour_team_leader_id", App.utilisateur.id },
+                { "titre", nom },
+                { "date", dateAct },
+                { "heure_debut", heureDeb },
+                { "heure_fin", heureFin },
+                { "lieu", lieu },
+                { "prix", tarif },
+                { "niveau", niveau },
+                { "nbr_participant", nbTeam },
+                { "activite_terminee", actTerminee }
+            };
 
-                var content2 = new StringContent(json.ToString(), Encoding.UTF8, contentType);
-                await client.PutAsync(urlAct, content2);
-            
-
-            await Navigation.PushAsync(new pageAccueil()); // doit renvoyer sur la page de consultation de l'activité pageActiviteGratuite(id)
+            var content2 = new StringContent(json.ToString(), Encoding.UTF8, contentType);
+            await client.PutAsync(urlAct, content2);
+            await Navigation.PushAsync(new pageAccueil());
         }
     }
 }

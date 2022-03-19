@@ -5,7 +5,7 @@
 
     <NavigationPage.TitleView>
         <StackLayout>
-            <Label Text="Supprimer des Teammates" 
+            <Label Text="Supprimer Teammates" 
                    TextColor="White" 
                    FontAttributes="Bold"
                    FontSize="Large"/>
@@ -13,44 +13,16 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Padding="15,30,0,15" Text="Teammates inscrits (3/4)" TextColor="Black"  FontFamily="rubikB"/>
+        <StackLayout >
+            <Label Padding="15,30,0,15" Text="Teammates inscrits" TextColor="Black"  FontFamily="rubikB"/>
+            <ListView x:Name="lv_suppression" ItemTapped="OnItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding identifiant}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-
-            <SwipeView>
-                <SwipeView.RightItems>
-                    <SwipeItems>
-                        <SwipeItem Text="Delete"
-                       IconImageSource="icon_poubelle.png"
-                       BackgroundColor="red"
-                     />
-                    </SwipeItems>
-                </SwipeView.RightItems>
-                <!-- Content -->
-                <TableView Intent="Settings">
-                    <TableRoot>
-                        <TableSection>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
-                                    <Label Text="LuluChacha" TextColor="Black"/>
-                                </StackLayout>
-                            </ViewCell>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
-                                    <Label Text="HugoLeBeau" TextColor="Black"/>
-                                </StackLayout>
-                            </ViewCell>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal" Padding="10,10,0,0">
-                                    <Label Text="TommyPrincesse" TextColor="Black"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </TableSection>
-                    </TableRoot>
-                </TableView>
-            </SwipeView>
-
-            
             <StackLayout Orientation="Horizontal" Padding="10,10,10,10" HorizontalOptions="CenterAndExpand">
                 <Button Text="Annuler"
                         FontFamily="rubik"
@@ -58,14 +30,14 @@
                         BorderColor="Black" 
                         BorderWidth="2" 
                         BackgroundColor="White"
-                        WidthRequest="125"/>
+                        WidthRequest="160"/>
                 <Button Text="Enregistrer"
                         FontFamily="rubik"
                         TextColor="Black" 
                         BorderColor="Black" 
                         BorderWidth="2" 
                         BackgroundColor="White"
-                        WidthRequest="125"/>
+                        WidthRequest="160"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

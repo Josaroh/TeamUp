@@ -118,13 +118,14 @@
             </Grid>
             
             <StackLayout>
-                <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 10">
+                <StackLayout Orientation="Horizontal" 
+                             Margin="0, 10, 0, 10">
                     <Label Text="Changer le mot de passe"
-                        x:Name="lblclick"
-                       VerticalTextAlignment="Center"
+                           x:Name="lblclick"
+                           VerticalTextAlignment="Center"
                            FontSize="Micro"
-                       TextColor="#1950a3"
-                       TextDecorations="Underline"/>
+                           TextColor="#1950a3"
+                           TextDecorations="Underline"/>
 
                 </StackLayout>
                 <Grid>

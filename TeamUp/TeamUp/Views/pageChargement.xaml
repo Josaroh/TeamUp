@@ -4,9 +4,10 @@
              x:Class="TeamUp.Views.pageChargement"
              BackgroundColor="#24b6ff">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="CenterAndExpand" Padding="0, 220, 0, 0">
+        <StackLayout HorizontalOptions="CenterAndExpand" 
+                     Padding="0, 220, 0, 0">
             <Image Source="logo_couleur_teamup_FINAL.jpg" 
-                       WidthRequest="200"/>
+                   WidthRequest="200"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

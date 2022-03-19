@@ -4,10 +4,21 @@
              x:Class="TeamUp.Views.pageSuiviAct">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="listViewActivite">
+
+            <Label Text="Liste de vos activités créées" Padding="10, 10, 0, 0"/>
+            <ListView x:Name="listViewActiviteC" ItemTapped="OnItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding id}" Detail="{Binding titre}"/>
+                        <TextCell Text="{Binding titre}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Text="Liste de vos activités rejointes" Padding="10, 10, 0, 0"/>
+            <ListView x:Name="listViewActiviteR" ItemTapped="OnItemTapped" >
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <TextCell Text="{Binding titre}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

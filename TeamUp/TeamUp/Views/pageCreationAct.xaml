@@ -13,114 +13,179 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal" Padding="10,20,10,10">
-                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+            <StackLayout Orientation="Horizontal" 
+                         Padding="5,10,5,5">
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="CenterAndExpand">
                     <DatePicker x:Name="startDatePicker"
                                 Format="dd MMM"
                                 DateSelected="OnDateSelected"
-                                WidthRequest="80"/>
+                                WidthRequest="100"/>
                 </StackLayout>
-                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <Label Text="-" FontSize="Title"  FontFamily="rubik" HorizontalTextAlignment="Center"/>
+                <StackLayout Orientation="Vertical"
+                             HorizontalOptions="CenterAndExpand" 
+                             Padding="0, 6, 0, 0">
+                    <Label Text="-" 
+                           FontSize="Title"  
+                           FontFamily="rubik" 
+                           HorizontalTextAlignment="Center"/>
                 </StackLayout>
-                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="CenterAndExpand" 
+                             Padding="0, 4, 0, 0">
                     <Entry x:Name="Nom"
                            IsPassword="False" 
                            ClearButtonVisibility="WhileEditing" 
                            ReturnType="Go" 
+                           Placeholder="Nom activité"
                            WidthRequest="200"/>
                 </StackLayout>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal" Padding="45,10,10,20">
+            <StackLayout Orientation="Horizontal" 
+                         Padding="25,10,10,20">
                 <StackLayout Orientation="Vertical">
-                    <StackLayout Orientation="Horizontal" Padding="0,50,0,30">
-                        <Image Source="icon_ping.jpg" WidthRequest="40"/>
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,50,0,30">
+                        <Image Source="icon_ping.jpg" 
+                               WidthRequest="40"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,20,0,30">
-                        <Image Source="icon_timer.jpg" WidthRequest="35"/>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,20,0,30">
+                        <Image Source="icon_timer.jpg" 
+                               WidthRequest="35"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,20,0,30">
-                        <Image Source="icon_moula.jpg" WidthRequest="40"/>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,20,0,30">
+                        <Image Source="icon_moula.jpg" 
+                               WidthRequest="40"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,20,0,30">
-                        <Image Source="icon_croissance.jpg" WidthRequest="45"/>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,20,0,30">
+                        <Image Source="icon_croissance.jpg"
+                               WidthRequest="45"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,5,0,30">
-                        <Image Source="profil_noir.png" WidthRequest="40."/>
+                    
+                    <StackLayout Orientation="Horizontal"
+                                 Padding="0,5,0,30">
+                        <Image Source="profil_noir.png" 
+                               WidthRequest="40."/>
                     </StackLayout>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical">
-                    <StackLayout Orientation="Horizontal" Padding="0,25,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,25,0,5">
+                        <Image Source="icon_barre.png" 
+                               WidthRequest="70"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    
+                    <StackLayout Orientation="Horizontal"
+                                 Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" 
+                               WidthRequest="70"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png"
+                               WidthRequest="70"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    
+                    <StackLayout Orientation="Horizontal"
+                                 Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" 
+                               WidthRequest="70"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png" 
+                               WidthRequest="70"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,-11,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png"
+                               WidthRequest="70"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,-40,0,5">
-                        <Image Source="icon_barre.png" WidthRequest="70"/>
+                    
+                    <StackLayout Orientation="Horizontal" 
+                                 Padding="0,-11,0,5">
+                        <Image Source="icon_barre.png"
+                               WidthRequest="70"/>
                     </StackLayout>
                 </StackLayout>
 
-                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                    <StackLayout Orientation="Vertical" Padding="-25,37,0,20">
-                        <Label Text="Lieu de rendez-vous *" TextColor="Black"  FontFamily="rubik"/>
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Vertical"
+                                 Padding="-25,37,0,20">
+                        <Label Text="Lieu de rendez-vous *" 
+                               TextColor="Black"  FontFamily="rubik"/>
                         <Entry x:Name="Lieu"
-                            IsPassword="False" 
-                           ClearButtonVisibility="WhileEditing" 
-                           ReturnType="Go" 
-                           WidthRequest="200"/>
+                               IsPassword="False" 
+                               ClearButtonVisibility="WhileEditing" 
+                               ReturnType="Go" 
+                               WidthRequest="200"/>
                     </StackLayout>
-                    <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
-                        <Label Text="Horaires *" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry x:Name="Horaires"
-                            IsPassword="False" 
-                           ClearButtonVisibility="WhileEditing" 
-                           ReturnType="Go" 
-                           WidthRequest="200"
-                               Placeholder="00h00 - 00h00"/>
+                    
+                    <StackLayout Orientation="Vertical" 
+                                 Padding="-25,0,0,20">
+                        <Label Text="Horaires *" 
+                               TextColor="Black"  
+                               FontFamily="rubik"/>
+                        <Entry  x:Name="Horaires"
+                                IsPassword="False" 
+                                ClearButtonVisibility="WhileEditing" 
+                                ReturnType="Go" 
+                                WidthRequest="200"
+                                Placeholder="00h00 - 00h00"/>
                     </StackLayout>
-                    <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
-                        <Label Text="Tarif" TextColor="Black"  FontFamily="rubik"/>
-                        <Entry x:Name="Tarif"
-                            IsPassword="False" 
-                           ClearButtonVisibility="WhileEditing" 
-                           ReturnType="Go" 
-                           WidthRequest="200"/>
+                    
+                    <StackLayout Orientation="Vertical" 
+                                 Padding="-25,0,0,20">
+                        <Label Text="Tarif" 
+                               TextColor="Black" 
+                               FontFamily="rubik"/>
+                        <Entry  x:Name="Tarif"
+                                IsPassword="False" 
+                                ClearButtonVisibility="WhileEditing" 
+                                ReturnType="Go" 
+                                WidthRequest="200"/>
                     </StackLayout>
-                    <StackLayout Orientation="Vertical" Padding="-25,0,0,20">
-                        <Label Text="Niveau *" TextColor="Black"  FontFamily="rubik"/>
+                    
+                    <StackLayout Orientation="Vertical" 
+                                 Padding="-25,0,0,20">
+                        <Label Text="Niveau *" 
+                               TextColor="Black"  
+                               FontFamily="rubik"/>
                         <Picker x:Name="Picker"
                                 Title="Choix du niveau"
                                 FontSize="Small"
                                 TitleColor="LightGray">
                         </Picker>
                     </StackLayout>
-                    <StackLayout Orientation="Vertical" Padding="-25,0,0,0">
-                        <Label Text="Nombre de Teammates *" TextColor="Black"  FontFamily="rubik"/>
+                    
+                    <StackLayout Orientation="Vertical" 
+                                 Padding="-25,0,0,0">
+                        <Label Text="Nombre de Teammates *" 
+                               TextColor="Black"  
+                               FontFamily="rubik"/>
                         <Entry x:Name="NbTeam"
-                            IsPassword="False" 
+                               IsPassword="False" 
                                ClearButtonVisibility="WhileEditing" 
                                ReturnType="Go" 
-                               WidthRequest="200"/>
+                               WidthRequest="200"
+                               Keyboard="Numeric"/>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
 
-            <StackLayout Padding="10,10,10,10">
+            <StackLayout Padding="0,0,25,25">
                 <Button Text="Enregistrer"
                         HorizontalOptions="End"
                         FontFamily="rubik"
@@ -128,7 +193,7 @@
                         BorderColor="Black" 
                         BorderWidth="2" 
                         BackgroundColor="White"
-                        WidthRequest="125"
+                        WidthRequest="160"
                         Clicked="OnClickCreationAct"/>
             </StackLayout>
         </StackLayout>

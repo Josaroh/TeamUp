@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using TeamUp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -20,8 +17,6 @@ namespace TeamUp.Views
             InitializeComponent();
 
             lblClickFucn();
-
-
             var ListeSports = new List<string>();
             ListeSports.Add("Boxe");
             ListeSports.Add("Surf");
@@ -36,18 +31,14 @@ namespace TeamUp.Views
 
         protected async override void OnAppearing()
         {
-
             Identifiant.Text = App.utilisateur.identifiant;
             Nom.Text = App.utilisateur.nom;
             Prenom.Text = App.utilisateur.prenom;
-            //trop chiant les dates sa mère
+            // manque date
             IdentifiantBis.Text = App.utilisateur.identifiant;
             Mail.Text = App.utilisateur.email;
-
             string url = "http://gestionlocation.ddns.net/profil.php?id=";
-
             url += App.utilisateur.profil_id;
-
             var content =  await client.GetStringAsync(url);
             var profil = JsonConvert.DeserializeObject<List<Profil>>(content);
 
@@ -59,34 +50,28 @@ namespace TeamUp.Views
 
         void lblClickFucn()
         {
-
-            lblclick.GestureRecognizers.Add(new TapGestureRecognizer()// "Le clique"
+            lblclick.GestureRecognizers.Add(new TapGestureRecognizer()
             {
-                //commande asynchrone : elle ne se lance pas dès que la page se génére
                 Command = new Command(async () =>
                 {
-                    await Navigation.PushAsync(new PageChangementDeMotDePasse()); // attend le clique, si le lblclick est cliqué renvoie sur la page d'inscription
+                    await Navigation.PushAsync(new PageChangementDeMotDePasse());
                 })
             });
         }
-
 
         public void OnDateSelected(object sender, EventArgs e)
         {
 
         }
+
         private async void OnClickDeconnexion(object sender, EventArgs e)
         {
-            //mettre condition mot de passe et identifiant
-
-            await Navigation.PushAsync(new pageConnexion()); // renvoie sur la page d'accueil
+            await Navigation.PushAsync(new pageConnexion()); 
         }
 
         private async void OnClickMdpOublie(object sender, EventArgs e)
         {
-            //mettre condition mot de passe et identifiant
-
-            await Navigation.PushAsync(new pageMotDePasseOublie()); // renvoie sur la page d'accueil
+            await Navigation.PushAsync(new pageMotDePasseOublie());
         }
     }
 }

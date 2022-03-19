@@ -8,7 +8,6 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
-using Map = Xamarin.Essentials.Map;
 
 namespace TeamUp.Views
 {
@@ -21,8 +20,6 @@ namespace TeamUp.Views
         public pageAccueil()
         {
             InitializeComponent();
-
-            
 
             var ListeSport = new List<string>();
             ListeSport.Add("Tennis");
@@ -39,12 +36,10 @@ namespace TeamUp.Views
             pickerLieu.ItemsSource = ListeLieu;
         }
 
-
-
-        protected override void OnDisappearing() { 
+        protected override void OnDisappearing() 
+        { 
             map.Pins.Clear();
         }
-
 
         protected async override void OnAppearing()
         {
@@ -53,17 +48,12 @@ namespace TeamUp.Views
 
             foreach (Activite act in activite)
             {
-                if (act.titre == "")
-                {
-                    Console.WriteLine("BRUUUUUUUUH");
-                }
-                else
+                if (act.titre != "")
                 {
                     Geocoder geoCoder = new Geocoder();
 
                     IEnumerable<Position> approximateLocations = await geoCoder.GetPositionsForAddressAsync(act.lieu);
                     Position position = approximateLocations.FirstOrDefault();
-                    //string coordinates = $"{position.Latitude}, {position.Longitude}";
 
                     Pin pin = new Pin
                     {
@@ -72,14 +62,12 @@ namespace TeamUp.Views
                         Address = act.lieu,
                         Type = PinType.Place,
                         Position = new Position(position.Latitude, position.Longitude)
-                        //pin.MarkerClicked = OnClickPin();
                     };
                     map.Pins.Add(pin);
                     pin.MarkerClicked += OnClickPin;
                 }
             }
 
-            //var res = await Geolocation.GetLastKnownLocationAsync();
             var res = await Geolocation.GetLocationAsync(new GeolocationRequest(GeolocationAccuracy.Default, TimeSpan.FromSeconds(10)));
 
             if (res != null)
@@ -90,7 +78,6 @@ namespace TeamUp.Views
             }
 
             map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(res.Latitude, res.Longitude), new Distance(2000)));
-            //map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(43.4775389, -1.5083868), new Distance(2000)));
         }
 
         private async void OnClickPin(object sender, EventArgs e)
@@ -106,7 +93,6 @@ namespace TeamUp.Views
 
             foreach(var act in activite)
             {
-
                 if (act.prix != null)
                 {
                     estPayant = true;
@@ -151,30 +137,22 @@ namespace TeamUp.Views
 
         private async void OnClickProfil(object sender, EventArgs e)
         {
-            //mettre condition mot de passe et identifiant
-
-            await Navigation.PushAsync(new pageProfil()); // renvoie sur la page d'accueil
+            await Navigation.PushAsync(new pageProfil()); 
         }
 
         private async void OnClickCreationAct(object sender, EventArgs e)
         {
-            //mettre condition mot de passe et identifiant
-
-            await Navigation.PushAsync(new pageCreationAct()); // renvoie sur la page d'accueil
+            await Navigation.PushAsync(new pageCreationAct());
         }
 
         private async void OnClickMessAccueil(object sender, EventArgs e)
         {
-            //mettre condition mot de passe et identifiant
-
-            await Navigation.PushAsync(new pageMessAccueil()); // renvoie sur la page d'accueil
+            await Navigation.PushAsync(new pageMessAccueil());
         }
 
         private async void OnClickSuiviAct(object sender, EventArgs e)
         {
-            //mettre condition mot de passe et identifiant
-
-            await Navigation.PushAsync(new pageSuiviAct()); // renvoie sur la page d'accueil
+            await Navigation.PushAsync(new pageSuiviAct());
         }
     }
 }
