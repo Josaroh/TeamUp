@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using TeamUp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,12 +13,15 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageProfil : ContentPage
     {
+        private string url = "http://gestionlocation.ddns.net/utilisateur.php?id=" + App.utilisateur.id;
+        private string urlProfil = "http://gestionlocation.ddns.net/profil.php?id=" + App.utilisateur.profil_id;
         private HttpClient client = new HttpClient();
+        private HttpClient client2 = new HttpClient();
+
         public pageProfil()
         {
             InitializeComponent();
 
-            lblClickFucn();
             var ListeSports = new List<string>();
             ListeSports.Add("Boxe");
             ListeSports.Add("Surf");
@@ -34,11 +39,14 @@ namespace TeamUp.Views
             Identifiant.Text = App.utilisateur.identifiant;
             Nom.Text = App.utilisateur.nom;
             Prenom.Text = App.utilisateur.prenom;
-            // manque date
+            DateNaiss.Text = App.utilisateur.date_naissance;
             IdentifiantBis.Text = App.utilisateur.identifiant;
             Mail.Text = App.utilisateur.email;
+            MotDePasse.Text = App.utilisateur.mot_de_passe;
+            
             string url = "http://gestionlocation.ddns.net/profil.php?id=";
             url += App.utilisateur.profil_id;
+            
             var content =  await client.GetStringAsync(url);
             var profil = JsonConvert.DeserializeObject<List<Profil>>(content);
 
@@ -46,22 +54,18 @@ namespace TeamUp.Views
             {
                 Localisation.Text = pro.localisation;
             }
-        }
 
-        void lblClickFucn()
-        {
-            lblclick.GestureRecognizers.Add(new TapGestureRecognizer()
+            slider.ValueChanged += (sender, args) =>
             {
-                Command = new Command(async () =>
+                if(args.NewValue < 10)
                 {
-                    await Navigation.PushAsync(new PageChangementDeMotDePasse());
-                })
-            });
-        }
-
-        public void OnDateSelected(object sender, EventArgs e)
-        {
-
+                    Etiquette.Text = String.Format("0{0} km", (int)args.NewValue);
+                }
+                else
+                {
+                    Etiquette.Text = String.Format("{0} km", (int)args.NewValue);
+                }
+            };
         }
 
         private async void OnClickDeconnexion(object sender, EventArgs e)
@@ -69,9 +73,56 @@ namespace TeamUp.Views
             await Navigation.PushAsync(new pageConnexion()); 
         }
 
-        private async void OnClickMdpOublie(object sender, EventArgs e)
+        private async void OnClickEnregistrer(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new pageMotDePasseOublie());
+            // partie UTILISATEUR
+            var identifiant = IdentifiantBis.Text;
+            var nom = Nom.Text;
+            var prenom = Prenom.Text;
+            var dateNaiss = DateNaiss.Text;
+            var mail = Mail.Text;
+            var motDePasse = MotDePasse.Text;
+
+            string contentType = "application/json";
+
+            JObject json = new JObject
+            {
+                { "identifiant", identifiant },
+                { "nom", nom },
+                { "prenom", prenom },
+                { "date_naissance", dateNaiss },
+                { "email", mail },
+                { "mot_de_passe", motDePasse }
+            };
+
+            var content = new StringContent(json.ToString(), Encoding.UTF8, contentType);
+            await client.PutAsync(url, content);
+
+            App.utilisateur.identifiant = identifiant;
+            App.utilisateur.nom = nom;
+            App.utilisateur.prenom = prenom;
+            App.utilisateur.date_naissance = dateNaiss;
+            App.utilisateur.email = mail;
+            App.utilisateur.mot_de_passe = motDePasse;
+
+            /* partie PROFIL A RESOUDRE
+            var localisation = Localisation.Text;
+            var perimetre = Etiquette.Text;
+            var preference = picker.SelectedItem.ToString();
+
+            string contentType2 = "application/json";
+
+            JObject json2 = new JObject
+            {
+                { "localisation", localisation },
+                { "perimetre", perimetre },
+                { "preference", preference }
+            };
+
+            var content2 = new StringContent(json2.ToString(), Encoding.UTF8, contentType2);
+            await client2.PutAsync(urlProfil, content2);*/
+
+            await Navigation.PushAsync(new pageAccueil());
         }
     }
 }

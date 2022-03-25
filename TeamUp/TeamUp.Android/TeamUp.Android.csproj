@@ -141,10 +141,13 @@
     <AndroidResource Include="Resources\drawable\profil_noir.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_poubelle.png" />
+    <AndroidResource Include="Resources\drawable\convo_noir.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\convo_noir.png" />
+    <AndroidResource Include="Resources\drawable\profilGroupe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_barreH.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

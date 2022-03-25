@@ -74,6 +74,7 @@ namespace TeamUp.Views
             var heureDeb = Horaire.Text.Substring(0, 5);
             var heureFin = Horaire.Text.Substring(8, 5);
             var niveau = Picker.SelectedItem.ToString();
+            
             string contentType = "application/json";
             var actTerminee = "false";
 

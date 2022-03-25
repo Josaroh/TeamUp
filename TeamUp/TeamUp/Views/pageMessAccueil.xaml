@@ -2,11 +2,490 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TeamUp.Views.pageMessAccueil">
-    <ContentPage.Content>
+
+    <NavigationPage.TitleView>
         <StackLayout>
-            <Label Text="Go tchacher avec les reufs !"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Messagerie" 
+                   TextColor="White"
+                   FontFamily="rubikB"
+                   FontSize="Large"/>
         </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="loupeRecherche.png"
+                     Order="Primary"
+                     Priority="0"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <!-- 1 personne -->
+            <StackLayout Orientation="Horizontal" 
+                         Padding="10, 10, 10, -20"
+                         IsEnabled="true">
+                <Image Source="profil_noir.png"
+                       WidthRequest="50"/>
+                <StackLayout Orientation="Vertical"
+                             Padding="10, 0, 0, 0">
+                    <Label Text="YayaLeKing" 
+                           FontSize="Medium" 
+                           TextColor="Black"
+                           FontFamily="rubikB"
+                           VerticalOptions="StartAndExpand"/>
+                    <Label Text="On se retrouve au match" 
+                           FontSize="Small" 
+                           TextColor="Black"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="EndAndExpand" 
+                             VerticalOptions="End" 
+                             Padding="0, 0, 10, 0">
+                    <Label Text="16h18" 
+                           FontSize="Small" 
+                           TextColor="Gray"
+                           FontFamily="rubikI"
+                           HorizontalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- traits séparateurs -->
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- 2 personnes -->
+            <StackLayout Orientation="Horizontal" 
+                         Padding="10, -20, 10, -20">
+                <Image Source="profil_noir.png"
+                       WidthRequest="50"/>
+                <StackLayout Orientation="Vertical"
+                             Padding="10, 0, 0, 0">
+                    <Label Text="TimFlow" 
+                           FontSize="Medium" 
+                           TextColor="Black"
+                           FontFamily="rubikB"    
+                           VerticalOptions="StartAndExpand"/>
+                    <Label Text="Mec, je me suis pas réveillé pour le surf" 
+                           FontSize="Small" 
+                           TextColor="Black"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="EndAndExpand" 
+                             VerticalOptions="End" 
+                             Padding="0, 0, 10, 0">
+                    <Label Text="09h45" 
+                           FontSize="Small" 
+                           TextColor="Gray"
+                           FontFamily="rubikI"
+                           HorizontalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- traits séparateurs -->
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- 3 personnes -->
+            <StackLayout Orientation="Horizontal" 
+                         Padding="10, -20, 10, -20">
+                <Image Source="profilGroupe.png"
+                       WidthRequest="50"/>
+                <StackLayout Orientation="Vertical"
+                             Padding="10, 0, 0, 0">
+                    <Label Text="GuiGuiNounours" 
+                           FontSize="Medium" 
+                           TextColor="Black"
+                           FontFamily="rubikB"    
+                           VerticalOptions="StartAndExpand"/>
+                    <Label Text="Go faire un combat de catch !" 
+                           FontSize="Small" 
+                           TextColor="Black"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="EndAndExpand" 
+                             VerticalOptions="End" 
+                             Padding="0, 0, 10, 0">
+                    <Label Text="16h18" 
+                           FontSize="Small" 
+                           TextColor="Gray"
+                           FontFamily="rubikI"
+                           HorizontalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- traits séparateurs -->
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- 4 personnes -->
+            <StackLayout Orientation="Horizontal" 
+                         Padding="10, -20, 10, -20">
+                <Image Source="profil_noir.png"
+                       WidthRequest="50"/>
+                <StackLayout Orientation="Vertical"
+                             Padding="10, 0, 0, 0">
+                    <Label Text="Epix Grenouille" 
+                           FontSize="Medium" 
+                           TextColor="Black"
+                           FontFamily="rubikB"    
+                           VerticalOptions="StartAndExpand"/>
+                    <Label Text="Je dessine, pas possible x)" 
+                           FontSize="Small" 
+                           TextColor="Black"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="EndAndExpand" 
+                             VerticalOptions="End" 
+                             Padding="0, 0, 10, 0">
+                    <Label Text="15h08" 
+                           FontSize="Small" 
+                           TextColor="Gray"
+                           FontFamily="rubikI"
+                           HorizontalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- traits séparateurs -->
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- 5 personnes -->
+            <StackLayout Orientation="Horizontal" 
+                         Padding="10, -20, 10, -20">
+                <Image Source="profil_noir.png"
+                       WidthRequest="50"/>
+                <StackLayout Orientation="Vertical"
+                             Padding="10, 0, 0, 0">
+                    <Label Text="Tommy" 
+                           FontSize="Medium" 
+                           TextColor="Black"
+                           FontFamily="rubikB"
+                           VerticalOptions="StartAndExpand"/>
+                    <Label Text="Je peux pas, je suis sur Elden Ring" 
+                           FontSize="Small" 
+                           TextColor="Black"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="EndAndExpand" 
+                             VerticalOptions="End" 
+                             Padding="0, 0, 10, 0">
+                    <Label Text="23h05" 
+                       FontSize="Small" 
+                       TextColor="Gray"
+                       FontFamily="rubikI"    
+                       HorizontalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- traits séparateurs -->
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- 6 personnes -->
+            <StackLayout Orientation="Horizontal" 
+                         Padding="10, -20, 10, -20">
+                <Image Source="profil_noir.png"
+                       WidthRequest="50"/>
+                <StackLayout Orientation="Vertical"
+                             Padding="10, 0, 0, 0">
+                    <Label Text="Peyre LaSirene" 
+                           FontFamily="rubikB"
+                           FontSize="Medium" 
+                           TextColor="Black"
+                           VerticalOptions="StartAndExpand"/>
+                    <Label Text="Gros, je peux pas, j'ai perdu ma voiture" 
+                           FontSize="Small" 
+                           TextColor="Black"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="EndAndExpand" 
+                             VerticalOptions="End" 
+                             Padding="0, 0, 10, 0">
+                    <Label Text="08h30" 
+                           FontSize="Small" 
+                           TextColor="Gray"
+                           FontFamily="rubikI"    
+                           HorizontalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- traits séparateurs -->
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- 7 personnes -->
+            <StackLayout Orientation="Horizontal" 
+                         Padding="10, -20, 10, -20">
+                <Image Source="profil_noir.png"
+                       WidthRequest="50"/>
+                <StackLayout Orientation="Vertical"
+                             Padding="10, 0, 0, 0">
+                    <Label Text="Titi" 
+                           FontSize="Medium" 
+                           TextColor="Black"
+                           VerticalOptions="StartAndExpand"
+                           FontFamily="rubikB"/>
+                    <Label Text="Coucouuuuuuuuuuuuuuuuu" 
+                           FontSize="Small" 
+                           TextColor="Black"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="EndAndExpand" 
+                             VerticalOptions="End" 
+                             Padding="0, 0, 10, 0">
+                    <Label Text="04h30" 
+                           FontSize="Small" 
+                           TextColor="Gray"
+                           FontFamily="rubikI"    
+                           HorizontalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- traits séparateurs -->
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="-10,0,0,0">
+                    <Image Source="icon_barreH.png"
+                       WidthRequest="70"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- 8 personnes -->
+            <StackLayout Orientation="Horizontal" 
+                         Padding="10, -20, 10, -20">
+                <Image Source="profil_noir.png"
+                       WidthRequest="50"/>
+                <StackLayout Orientation="Vertical"
+                             Padding="10, 0, 0, 0">
+                    <Label Text="Kevin Soleil" 
+                           FontSize="Medium" 
+                           TextColor="Black"
+                           VerticalOptions="StartAndExpand"
+                           FontFamily="rubikB"/>
+                    <Label Text="Jvais en boite, jpeux pas" 
+                           FontSize="Small" 
+                           TextColor="Black"
+                           VerticalTextAlignment="Center"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="EndAndExpand" 
+                             VerticalOptions="End" 
+                             Padding="0, 0, 5, 0">
+                    <Label Text="08h30" 
+                           FontSize="Small" 
+                           TextColor="Gray"
+                           FontFamily="rubikI"    
+                           HorizontalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

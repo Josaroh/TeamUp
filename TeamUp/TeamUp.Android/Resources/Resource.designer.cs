@@ -22146,19 +22146,19 @@ namespace TeamUp.Droid
 			public const int icon_barre = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int icon_croissance = 2131165318;
+			public const int icon_barreH = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int icon_feed = 2131165319;
+			public const int icon_croissance = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int icon_moula = 2131165320;
+			public const int icon_feed = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int icon_ping = 2131165321;
+			public const int icon_moula = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int icon_poubelle = 2131165322;
+			public const int icon_ping = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
 			public const int icon_timer = 2131165323;
@@ -22304,20 +22304,23 @@ namespace TeamUp.Droid
 			// aapt resource value: 0x7F0700B3
 			public const int profil = 2131165363;
 			
+			// aapt resource value: 0x7F0700B5
+			public const int profilGroupe = 2131165365;
+			
 			// aapt resource value: 0x7F0700B4
 			public const int profil_noir = 2131165364;
 			
-			// aapt resource value: 0x7F0700B5
-			public const int test_custom_background = 2131165365;
-			
 			// aapt resource value: 0x7F0700B6
-			public const int tooltip_frame_dark = 2131165366;
+			public const int test_custom_background = 2131165366;
 			
 			// aapt resource value: 0x7F0700B7
-			public const int tooltip_frame_light = 2131165367;
+			public const int tooltip_frame_dark = 2131165367;
 			
 			// aapt resource value: 0x7F0700B8
-			public const int xamarin_logo = 2131165368;
+			public const int tooltip_frame_light = 2131165368;
+			
+			// aapt resource value: 0x7F0700B9
+			public const int xamarin_logo = 2131165369;
 			
 			static Drawable()
 			{

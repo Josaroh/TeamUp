@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage Title="Profil"
              xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:TeamUp.Views"
              x:Class="TeamUp.Views.pageProfil">
 
     <NavigationPage.TitleView>
@@ -14,152 +14,160 @@
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <StackLayout BackgroundColor="White" Padding="30,0,30,0">
-            <StackLayout Padding="30,10,30,10">
-                <Image Source="NonoPasSportive.jpg"
-                       WidthRequest="150"
-                       x:Name="urlImage"/>
-            </StackLayout>
-            
-            <Label Text="NonoLaNonSportive" 
+        <StackLayout BackgroundColor="White" 
+                     Padding="30,30,30,0">
+
+            <Label x:Name="Identifiant" 
                    FontAttributes="Bold" 
                    FontSize="Title" 
                    Padding="30,10,30,10" 
                    HorizontalTextAlignment="Center" 
-                   TextColor="Black"
-                   x:Name="Identifiant"/>
+                   TextColor="Black"/>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.5*" />
-                    <ColumnDefinition Width="0.5*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
-                </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" >
                 <Label Text="Nom" 
-                       FontSize="Small" 
-                       TextColor="Black"/>
-                <Entry Grid.Column="1"
+                       FontSize="Medium" 
+                       TextColor="Black"
+                       Padding="0, 10, 0, 0"/>
+                <Entry x:Name="Nom"
                        IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
                        ReturnType="Go"
-                       x:Name="Nom"/>
-                <Label Grid.Row="1"
-                       Text="Prenom" 
-                       FontSize="Small"
-                       TextColor="Black" />
-                <Entry Grid.Row="1" 
-                       Grid.Column="1"
-                       IsPassword="False" 
-                       ClearButtonVisibility="WhileEditing" 
-                       ReturnType="Go"
-                       x:Name="Prenom"/>
-                <Label Grid.Row="2"
-                       Text="Date de naissance"
-                       FontSize="Small"
-                       TextColor="Black"/>
-                <DatePicker Grid.Row="2" 
-                            Grid.Column="1"
-                            x:Name="startDatePicker"
-                            Format="dd/MM/yyyy"
-                            FontSize="Small"
-                            DateSelected="OnDateSelected"/>
-                <Label Grid.Row="3"
-                       Text="Identifiant"
-                       FontSize="Small"
-                       TextColor="Black" />
-                <Entry Grid.Row="3" 
-                       Grid.Column="1"
-                       IsPassword="False" 
-                       ClearButtonVisibility="WhileEditing" 
-                       ReturnType="Go"
-                       x:Name="IdentifiantBis"/>
-                <Label Grid.Row="4"
-                       Text="E-mail"
-                       FontSize="Small"
-                       TextColor="Black" />
-                <Entry Grid.Row="4" 
-                       Grid.Column="1"
-                       IsPassword="False" 
-                       ClearButtonVisibility="WhileEditing" 
-                       ReturnType="Go"
-                       x:Name="Mail"/>
-                <Label Grid.Row="5"
-                       Text="Localisation" 
-                       FontSize="Small"
-                       TextColor="Black" />
-                <Entry Grid.Row="5" 
-                       Grid.Column="1"
-                       IsPassword="False" 
-                       ClearButtonVisibility="WhileEditing" 
-                       ReturnType="Go"
-                       x:Name="Localisation"/>
-                <Label Grid.Row="6"
-                       Text="Périmètre"
-                       FontSize="Small"
-                       TextColor="Black" />
-                <Slider Grid.Row="6"
-                        Grid.Column="1"
-                        Maximum="30"/>
-                <Label Grid.Row="7"
-                       Text="Préférences" 
-                       FontSize="Small"
-                       TextColor="Black" />
-                <Picker Grid.Row="7"
-                        Grid.Column="1"
-                        x:Name="picker"
-                        Title="Choix d'un sport"
-                        FontSize="Small"
-                        TitleColor="LightGray">
-                        
-                </Picker>
-            </Grid>
-            
-            <StackLayout>
-                <StackLayout Orientation="Horizontal" 
-                             Margin="0, 10, 0, 10">
-                    <Label Text="Changer le mot de passe"
-                           x:Name="lblclick"
-                           VerticalTextAlignment="Center"
-                           FontSize="Micro"
-                           TextColor="#1950a3"
-                           TextDecorations="Underline"/>
-
-                </StackLayout>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.5*" />
-                        <ColumnDefinition Width="0.5*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="40" />
-                        <RowDefinition Height="50" />
-                    </Grid.RowDefinitions>
-                    <Button Text="Enregistrer" 
-                            TextColor="Black" 
-                            WidthRequest="150" 
-                            HorizontalOptions="Start" 
-                            BorderColor="Black" 
-                            BorderWidth="3" 
-                            FontSize="Micro"
-                            BackgroundColor="White"
-                            Clicked="OnClickMdpOublie" />
-
-                    <Button Clicked="OnClickDeconnexion" 
-                            Text="Se déconnecter" 
-                            TextColor="Black" 
-                            WidthRequest="150" 
-                            HorizontalOptions="End" 
-                            BorderColor="Black" 
-                            BorderWidth="3" 
-                            BackgroundColor="White"
-                            FontSize="Micro"
-                            Grid.Column="1"/>
-                </Grid>
+                       WidthRequest="250"
+                       Margin="20, 0, 0, 0"/>
             </StackLayout>
 
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Prenom" 
+                       FontSize="Medium"
+                       TextColor="Black" 
+                       Padding="0, 10, 0, 0"/>
+                <Entry x:Name="Prenom"
+                       IsPassword="False" 
+                       ClearButtonVisibility="WhileEditing" 
+                       ReturnType="Go"
+                       WidthRequest="225"
+                       Margin="20, 0, 0, 0"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Date de naissance"
+                       FontSize="Medium"
+                       TextColor="Black"
+                       Padding="0, 10, 0, 0"/>
+                <Entry x:Name="DateNaiss"
+                       FontSize="Medium"
+                       WidthRequest="140"
+                       Margin="20, 0, 0, 0"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Identifiant"
+                       FontSize="Medium"
+                       TextColor="Black" 
+                       Padding="0, 10, 0, 0"/>
+                <Entry x:Name="IdentifiantBis"
+                       IsPassword="False" 
+                       ClearButtonVisibility="WhileEditing" 
+                       ReturnType="Go"
+                       WidthRequest="208"
+                       Margin="20, 0, 0, 0"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="E-mail"
+                       FontSize="Medium"
+                       TextColor="Black" 
+                       Padding="0, 10, 0, 0"/>
+                <Entry x:Name="Mail"
+                       IsPassword="False" 
+                       ClearButtonVisibility="WhileEditing" 
+                       ReturnType="Go"
+                       WidthRequest="240"
+                       Margin="20, 0, 0, 0"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Mot de passe" 
+                       FontSize="Medium"
+                       TextColor="Black" 
+                       Padding="0, 10, 0, 0"/>
+                <Entry x:Name="MotDePasse"
+                       IsPassword="False" 
+                       ClearButtonVisibility="WhileEditing" 
+                       ReturnType="Go"
+                       WidthRequest="225"
+                       Margin="20, 0, 0, 0"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Localisation" 
+                       FontSize="Medium"
+                       TextColor="Black" 
+                       Padding="0, 10, 0, 0"/>
+                <Entry x:Name="Localisation"
+                       IsPassword="False" 
+                       ClearButtonVisibility="WhileEditing" 
+                       ReturnType="Go"
+                       WidthRequest="193"
+                       Margin="20, 0, 0, 0"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Périmètre"
+                       FontSize="Medium"
+                       TextColor="Black" 
+                       Padding="0, 10, 0, 0"/>
+                <Label x:Name="Etiquette"
+                       Text="00 km"
+                       FontSize="Small"
+                       TextColor="Black" 
+                       Padding="25, 14, 0, 0"/>
+                <Slider x:Name="slider"
+                        Maximum="30"
+                        MinimumTrackColor="#24b6ff"
+                        MaximumTrackColor="#a4a4a4"
+                        ThumbColor="#1950a3"
+                        Margin="-5, 14, 0, 0"
+                        WidthRequest="180"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Préférences" 
+                       FontSize="Medium"
+                       TextColor="Black" 
+                       Padding="0, 19, 0, 0"/>
+                <Picker x:Name="picker"
+                        Title="Choix d'un sport"
+                        FontSize="Small"
+                        TitleColor="LightGray"
+                        Margin="20, 13, 0, 0"
+                        WidthRequest="195">
+                </Picker>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button Text="Enregistrer" 
+                        TextColor="Black" 
+                        WidthRequest="150" 
+                        HorizontalOptions="Start" 
+                        BorderColor="Black" 
+                        BorderWidth="3"
+                        FontSize="Micro"
+                        BackgroundColor="White"
+                        Clicked="OnClickEnregistrer" />
+
+                <Button Clicked="OnClickDeconnexion" 
+                        Text="Se déconnecter" 
+                        TextColor="Black" 
+                        WidthRequest="150" 
+                        HorizontalOptions="End" 
+                        BorderColor="Black" 
+                        BorderWidth="3" 
+                        BackgroundColor="White"
+                        FontSize="Micro"
+                        Grid.Column="1"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
