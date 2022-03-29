@@ -83,16 +83,12 @@
                     </StackLayout>
                     
                     <StackLayout Orientation="Horizontal"
-                                 Padding="0,-11,0,5">
+                                 Padding="0,-50,0,5">
                         <Image Source="icon_barre.png"
                                WidthRequest="70"/>
                     </StackLayout>
                     
-                    <StackLayout Orientation="Horizontal" 
-                                 Padding="0,-11,0,5">
-                        <Image Source="icon_barre.png"
-                               WidthRequest="70"/>
-                    </StackLayout>
+                  
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical" 

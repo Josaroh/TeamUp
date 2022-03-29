@@ -53,6 +53,16 @@ namespace TeamUp.Views
             foreach (Profil pro in profil)
             {
                 Localisation.Text = pro.localisation;
+
+                string[] tab = pro.perimetre.Split(' ');
+
+                Etiquette.Text = tab[0] + " km";
+
+                double value = Convert.ToDouble(tab[0]);
+
+                slider.Value = value;
+
+                picker.SelectedItem = pro.preference;
             }
 
             slider.ValueChanged += (sender, args) =>
@@ -75,6 +85,9 @@ namespace TeamUp.Views
 
         private async void OnClickEnregistrer(object sender, EventArgs e)
         {
+
+            Console.WriteLine("C'est parti!");
+
             // partie UTILISATEUR
             var identifiant = IdentifiantBis.Text;
             var nom = Nom.Text;
@@ -105,12 +118,32 @@ namespace TeamUp.Views
             App.utilisateur.email = mail;
             App.utilisateur.mot_de_passe = motDePasse;
 
-            /* partie PROFIL A RESOUDRE
+
+            Console.WriteLine("Partie Profile1");
+
+            //partie PROFIL A RESOUDRE
             var localisation = Localisation.Text;
+            Console.WriteLine("Partie Profile2");
             var perimetre = Etiquette.Text;
-            var preference = picker.SelectedItem.ToString();
+            Console.WriteLine("Partie Profile3");
+
+            string preference;
+
+            if(picker.SelectedItem == null)
+            {
+                preference = "NULL";
+            }
+            else { 
+                preference = picker.SelectedItem.ToString(); 
+            }
+
+            Console.WriteLine("Partie Profile4");
+
+
 
             string contentType2 = "application/json";
+
+            Console.WriteLine("Partie Profile5");
 
             JObject json2 = new JObject
             {
@@ -119,8 +152,16 @@ namespace TeamUp.Views
                 { "preference", preference }
             };
 
+            Console.WriteLine("Partie Profile6");
+
+            Console.WriteLine("Objet:"+json2.ToString());
+
+
+
             var content2 = new StringContent(json2.ToString(), Encoding.UTF8, contentType2);
-            await client2.PutAsync(urlProfil, content2);*/
+
+            Console.WriteLine("URL:" + urlProfil);
+            await client2.PutAsync(urlProfil, content2);
 
             await Navigation.PushAsync(new pageAccueil());
         }

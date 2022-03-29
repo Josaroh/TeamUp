@@ -1,9 +1,13 @@
-﻿using System;
+﻿
+
+
+using System;
 using Android;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using AndroidX.AppCompat.App;
 
 namespace TeamUp.Droid
 {
@@ -19,6 +23,7 @@ namespace TeamUp.Droid
         };
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightNo;
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

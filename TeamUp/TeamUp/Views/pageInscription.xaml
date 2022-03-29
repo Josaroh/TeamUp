@@ -33,7 +33,8 @@
                        IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
                        ReturnType="Go" 
-                       Grid.Row="1"/>
+                       Grid.Row="1"
+                       />
                 <Entry x:Name="Prenom"
                        IsPassword="False" 
                        ClearButtonVisibility="WhileEditing" 
