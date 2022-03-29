@@ -20,7 +20,7 @@ namespace TeamUp
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage(new pageMessAccueil())
+            MainPage = new NavigationPage(new pageConnexion())
             {
                 BarBackgroundColor = Color.FromHex("#24b6ff")
             };
