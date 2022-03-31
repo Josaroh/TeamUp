@@ -22,6 +22,7 @@ namespace TeamUp.Views
         private string nbMaxTeam;
         private int cptTeam = 0;
         private bool isTeamLeader = false;
+        private bool isTeammate = false;
 
         public pageConsultationActGratuite(string id)
         {
@@ -75,6 +76,14 @@ namespace TeamUp.Views
                 urlUser += team.utilisateur_id;
                 var contentUser = await clientTeam.GetStringAsync(urlUser);
                 var utilisateur = JsonConvert.DeserializeObject<List<Utilisateur>>(contentUser);
+
+                if(team.utilisateur_id == App.utilisateur.id)
+                {
+                    Console.WriteLine("IL EST TEAMMATE");
+                    isTeammate = true;
+                }
+
+
                 var user = utilisateur.Find(x => x.id.Contains(team.utilisateur_id));
                 LstTeammates.Add(new TextCell { Text = user.identifiant });
                 cptTeam++;
@@ -118,8 +127,12 @@ namespace TeamUp.Views
         {
             if(cptTeam == int.Parse(nbMaxTeam))
             {
-                DisplayAlert("Team complète", "Vous ne pouvez plus rejoindre cette activité", "Ok");
+                await DisplayAlert("Team complète", "Vous ne pouvez plus rejoindre cette activité", "Ok");
                 btn_inscr.IsEnabled = false;
+            }
+            else if (isTeammate == true)
+            {
+                await DisplayAlert("Teammate","Vous êtes déjà inscrit à cette activité", "Ok");
             }
             else
             {
