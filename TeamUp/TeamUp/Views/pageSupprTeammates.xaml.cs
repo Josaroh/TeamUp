@@ -43,7 +43,7 @@ namespace TeamUp.Views
         private async void OnItemTapped(object sender, ItemTappedEventArgs e)
         {
             Utilisateur tappedItem = (Utilisateur)e.Item;
-            bool supprT = await DisplayAlert("Suppimer le teammate", "Voulez-vous vraiment supprimmer le teammate ?", "Non", "Oui");
+            bool supprT = await DisplayAlert("Supprimer le teammate", "Voulez-vous vraiment supprimer le teammate ?", "Non", "Oui");
             string urlSuppr = "";
 
             if (!supprT)

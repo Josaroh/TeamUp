@@ -23,22 +23,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <StackLayout Orientation="Horizontal" Padding="10,10,10,10" HorizontalOptions="CenterAndExpand">
-                <Button Text="Annuler"
-                        FontFamily="rubik"
-                        TextColor="Black" 
-                        BorderColor="Black" 
-                        BorderWidth="2" 
-                        BackgroundColor="White"
-                        WidthRequest="160"/>
-                <Button Text="Enregistrer"
-                        FontFamily="rubik"
-                        TextColor="Black" 
-                        BorderColor="Black" 
-                        BorderWidth="2" 
-                        BackgroundColor="White"
-                        WidthRequest="160"/>
-            </StackLayout>
+        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

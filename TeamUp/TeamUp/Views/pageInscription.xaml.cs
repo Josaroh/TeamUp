@@ -58,7 +58,7 @@ namespace TeamUp.Views
 
             if (existe == false)
             {
-                bool answer = await DisplayAlert("Conditions Générales d'utilisations", "Acceptez-vous nos Conditions générales d'utilisation?", "Non", "Oui");
+                bool answer = await DisplayAlert("Conditions générales d'utilisation", "Acceptez-vous nos conditions générales d'utilisation ?", "Non", "Oui");
 
                 if(answer == false)
                 {
