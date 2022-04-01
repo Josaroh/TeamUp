@@ -52,17 +52,50 @@ namespace TeamUp.Views
 
             foreach (Profil pro in profil)
             {
-                Localisation.Text = pro.localisation;
 
-                string[] tab = pro.perimetre.Split(' ');
+                Console.WriteLine("ETAPE1");
 
-                Etiquette.Text = tab[0] + " km";
+                if (pro.localisation == "NULL")
+                {
 
-                double value = Convert.ToDouble(tab[0]);
+                }
+                else
+                {
+                    Localisation.Text = pro.localisation;
+                }
 
-                slider.Value = value;
+                Console.WriteLine("etape2");
 
-                picker.SelectedItem = pro.preference;
+
+                if (pro.perimetre == "NULL")
+                {
+
+                }
+                else
+                {
+                    string[] tab = pro.perimetre.Split(' ');
+
+                    Etiquette.Text = tab[0] + " km";
+
+                    double value = Convert.ToDouble(tab[0]);
+
+                    slider.Value = value;
+                }
+
+                Console.WriteLine("etape3");
+
+                if (pro.preference == "NULL")
+                {
+
+                }
+                else
+                {
+                    picker.SelectedItem = pro.preference;
+                }
+                Console.WriteLine("etape4");
+
+
+
             }
 
             slider.ValueChanged += (sender, args) =>
