@@ -12,7 +12,7 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageSupprTeammates : ContentPage
     {
-        private string urlTeam = "http://gestionlocation.ddns.net/teammates.php?idActivite=";
+        private string urlTeam = "http://appteamup.ddns.net/teammates.php?idActivite=";
         private HttpClient clientTeam = new HttpClient();
         private ObservableCollection<Utilisateur> _utilisateur = new ObservableCollection<Utilisateur>();
 
@@ -28,7 +28,7 @@ namespace TeamUp.Views
             var teammate = JsonConvert.DeserializeObject<List<Teammate>>(contentTeam);
             foreach (Teammate team in teammate)
             {
-                var urlUser = "http://gestionlocation.ddns.net/utilisateur.php?id=";
+                var urlUser = "http://appteamup.ddns.net/utilisateur.php?id=";
                 urlUser += team.utilisateur_id;
                 var contentUser = await clientTeam.GetStringAsync(urlUser);
                 var utilisateur = JsonConvert.DeserializeObject<List<Utilisateur>>(contentUser);

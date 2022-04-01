@@ -11,8 +11,8 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageSuiviAct : ContentPage
     {
-        private string urlTL = "http://gestionlocation.ddns.net/activite.php?idTeamLeader=" + App.utilisateur.id;
-        private string urlTeammate = "http://gestionlocation.ddns.net/teammates.php?idUtilisateur=" + App.utilisateur.id;
+        private string urlTL = "http://appteamup.ddns.net/activite.php?idTeamLeader=" + App.utilisateur.id;
+        private string urlTeammate = "http://appteamup.ddns.net/teammates.php?idUtilisateur=" + App.utilisateur.id;
         private HttpClient _client = new HttpClient();
         private ObservableCollection<Activite> _activite;
         private ObservableCollection<Activite> _activiteR = new ObservableCollection<Activite>();

@@ -13,9 +13,9 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageConsultationActGratuite : ContentPage
     {
-        private string urlAct = "http://gestionlocation.ddns.net/activite.php?id=";
-        private string urlTeam = "http://gestionlocation.ddns.net/teammates.php?idActivite=";
-        private string urlTeammates = "http://gestionlocation.ddns.net/teammates.php";
+        private string urlAct = "http://appteamup.ddns.net/activite.php?id=";
+        private string urlTeam = "http://appteamup.ddns.net/teammates.php?idActivite=";
+        private string urlTeammates = "http://appteamup.ddns.net/teammates.php";
         public string idPage;
         private HttpClient clientAct = new HttpClient();
         private HttpClient clientTeam = new HttpClient();
@@ -58,7 +58,7 @@ namespace TeamUp.Views
 
                 }
                
-                var urlTL = "http://gestionlocation.ddns.net/utilisateur.php?id=";
+                var urlTL = "http://appteamup.ddns.net/utilisateur.php?id=";
                 urlTL += act.a_pour_team_leader_id;
                 var contentTL = await clientTeam.GetStringAsync(urlTL);
                 var teamLeader = JsonConvert.DeserializeObject<List<Utilisateur>>(contentTL);
@@ -72,7 +72,7 @@ namespace TeamUp.Views
 
             foreach (Teammate team in teammate)
             {
-                var urlUser = "http://gestionlocation.ddns.net/utilisateur.php?id=";
+                var urlUser = "http://appteamup.ddns.net/utilisateur.php?id=";
                 urlUser += team.utilisateur_id;
                 var contentUser = await clientTeam.GetStringAsync(urlUser);
                 var utilisateur = JsonConvert.DeserializeObject<List<Utilisateur>>(contentUser);

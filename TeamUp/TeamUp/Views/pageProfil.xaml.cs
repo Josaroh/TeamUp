@@ -13,8 +13,8 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageProfil : ContentPage
     {
-        private string url = "http://gestionlocation.ddns.net/utilisateur.php?id=" + App.utilisateur.id;
-        private string urlProfil = "http://gestionlocation.ddns.net/profil.php?id=" + App.utilisateur.profil_id;
+        private string url = "http://appteamup.ddns.net/utilisateur.php?id=" + App.utilisateur.id;
+        private string urlProfil = "http://appteamup.ddns.net/profil.php?id=" + App.utilisateur.profil_id;
         private HttpClient client = new HttpClient();
         private HttpClient client2 = new HttpClient();
 
@@ -44,7 +44,7 @@ namespace TeamUp.Views
             Mail.Text = App.utilisateur.email;
             MotDePasse.Text = App.utilisateur.mot_de_passe;
             
-            string url = "http://gestionlocation.ddns.net/profil.php?id=";
+            string url = "http://appteamup.ddns.net/profil.php?id=";
             url += App.utilisateur.profil_id;
             
             var content =  await client.GetStringAsync(url);

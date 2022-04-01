@@ -13,7 +13,7 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageModifActPayante : ContentPage
     {
-        private string urlAct = "http://gestionlocation.ddns.net/activite.php?id=";
+        private string urlAct = "http://appteamup.ddns.net/activite.php?id=";
         private HttpClient client = new HttpClient();
 
         public pageModifActPayante(string id)

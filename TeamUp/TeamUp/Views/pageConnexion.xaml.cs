@@ -33,7 +33,7 @@ namespace TeamUp.Views
 
         private async void OnClickSeConnecter(object sender, EventArgs e)
         {
-            string url = "http://gestionlocation.ddns.net/utilisateur.php?identifiant=";
+            string url = "http://appteamup.ddns.net/utilisateur.php?identifiant=";
             var identifiant = identifiantOrEmail.Text;
             var motDePasse = MotDePasse.Text;
 

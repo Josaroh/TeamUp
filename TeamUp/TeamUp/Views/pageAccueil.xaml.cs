@@ -14,7 +14,7 @@ namespace TeamUp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class pageAccueil : ContentPage
     {
-        private string url = "http://gestionlocation.ddns.net/activite.php";
+        private string url = "http://appteamup.ddns.net/activite.php";
 
         private HttpClient client = new HttpClient();
         public pageAccueil()
@@ -87,7 +87,7 @@ namespace TeamUp.Views
             //condition act gratuite
             bool inscrit = false;
             bool estPayant = false;
-            string url = "http://gestionlocation.ddns.net/activite.php?id=" + actId;
+            string url = "http://appteamup.ddns.net/activite.php?id=" + actId;
             var content = await client.GetStringAsync(url);
             var activite = JsonConvert.DeserializeObject<List<Activite>>(content);
 
@@ -104,7 +104,7 @@ namespace TeamUp.Views
                 }
             }
 
-            url = "http://gestionlocation.ddns.net/teammates.php?idActivite=" + actId;
+            url = "http://appteamup.ddns.net/teammates.php?idActivite=" + actId;
             content = await client.GetStringAsync(url);
             var teammates = JsonConvert.DeserializeObject<List<Teammate>>(content);
 
