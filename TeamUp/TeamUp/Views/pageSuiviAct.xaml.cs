@@ -36,7 +36,7 @@ namespace TeamUp.Views
 
             foreach(Teammate unTeammate in activitesTM)
             {
-                var urlActivite = "http://gestionlocation.ddns.net/activite.php?id=";
+                var urlActivite = "http://appteamup.ddns.net/activite.php?id=";
                 urlActivite += unTeammate.activite_id;
                 var contentActivite = await _client.GetStringAsync(urlActivite);
                 var activites = JsonConvert.DeserializeObject<List<Activite>>(contentActivite);
